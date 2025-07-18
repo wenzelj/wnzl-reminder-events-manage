@@ -27,7 +27,7 @@ export const useNotifications = (userEmail: string) => {
       
       const mappedNotifications: Notification[] = data.map(item => ({
         id: item.id,
-        userId: item.user_email,
+        userId: item.user_id,
         title: item.title,
         description: item.message,
         category: item.category,
@@ -49,7 +49,7 @@ export const useNotifications = (userEmail: string) => {
     }
   };
 
-  const addNotification = async (notification: Omit<Notification, 'id' | 'userId' | 'createdAt'>) => {
+  const addNotification = async (notification: Omit<Notification, 'id' | 'userId' | 'createdAt'>, userEmail: string) => {
     try {
       const { error } = await supabase
         .from('notifications')
