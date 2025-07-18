@@ -3,16 +3,16 @@ import { Notification, NotificationHistory } from '@/types';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/lib/supabase';
 
-export const useNotifications = (userEmail: string) => {
+export const useNotifications = (userId: string) => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [history, setHistory] = useState<NotificationHistory[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (userEmail) {
+    if (userId) {
       loadNotifications();
     }
-  }, [userEmail]);
+  }, [userId]);
 
   const loadNotifications = async () => {
     setLoading(true);
@@ -20,14 +20,13 @@ export const useNotifications = (userEmail: string) => {
       const { data, error } = await supabase
         .from('notifications')
         .select('*')
-        .eq('user_email', userEmail)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
       
       const mappedNotifications: Notification[] = data.map(item => ({
         id: item.id,
-        userId: item.user_email,
+        userId: item.user_id,
         title: item.title,
         description: item.message,
         category: item.category,
@@ -54,7 +53,7 @@ export const useNotifications = (userEmail: string) => {
       const { error } = await supabase
         .from('notifications')
         .insert({
-          user_email: userEmail,
+          user_id: userId,
           title: notification.title,
           message: notification.description,
           category: notification.category,
