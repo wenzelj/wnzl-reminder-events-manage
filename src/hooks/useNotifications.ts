@@ -3,16 +3,16 @@ import { Notification, NotificationHistory } from '@/types';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/lib/supabase';
 
-export const useNotifications = (userId: string) => {
+export const useNotifications = (userEmail: string) => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [history, setHistory] = useState<NotificationHistory[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (userId) {
+    if (userEmail) {
       loadNotifications();
     }
-  }, [userId]);
+  }, [userEmail]);
 
   const loadNotifications = async () => {
     setLoading(true);
@@ -20,6 +20,7 @@ export const useNotifications = (userId: string) => {
       const { data, error } = await supabase
         .from('notifications')
         .select('*')
+        .eq('user_email', userEmail)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
@@ -48,12 +49,12 @@ export const useNotifications = (userId: string) => {
     }
   };
 
-  const addNotification = async (notification: Omit<Notification, 'id' | 'userId' | 'createdAt'>) => {
+  const addNotification = async (notification: Omit<Notification, 'id' | 'userId' | 'createdAt'>, userEmail: string) => {
     try {
       const { error } = await supabase
         .from('notifications')
         .insert({
-          user_id: userId,
+          user_email: userEmail,
           title: notification.title,
           message: notification.description,
           category: notification.category,

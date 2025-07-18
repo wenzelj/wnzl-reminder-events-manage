@@ -16,7 +16,7 @@ const AppLayout: React.FC = () => {
   const [editingNotification, setEditingNotification] = useState<Notification | undefined>();
   const [activeTab, setActiveTab] = useState('notifications');
   
-  const notificationHook = useNotifications(user?.id || '');
+  const notificationHook = useNotifications(user?.email || '');
 
   if (loading) {
     return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
@@ -39,7 +39,7 @@ const AppLayout: React.FC = () => {
     if (editingNotification) {
       notificationHook.updateNotification(editingNotification.id, data);
     } else {
-      notificationHook.addNotification(data);
+      notificationHook.addNotification(data, user.email);
     }
     setShowForm(false);
     setEditingNotification(undefined);
