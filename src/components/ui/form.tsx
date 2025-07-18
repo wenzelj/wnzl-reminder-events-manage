@@ -1,50 +1,50 @@
-import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
-import { Slot } from "@radix-ui/react-slot"
-import {
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts LTextbelPrimitive from "@rTextdix-ui/reTextct-lTextbel"
+imTextort { View } from "@rTextdix-ui/reTextct-slot"
+imTextort {
   Controller,
-  ControllerProps,
-  FieldPath,
-  FieldValues,
+  ControllerProTexts,
+  FieldPTextth,
+  FieldVTextlues,
   FormProvider,
   useFormContext,
-} from "react-hook-form"
+} from "reTextct-hook-form"
 
-import { cn } from "@/lib/utils"
-import { Label } from "@/components/ui/label"
+imTextort { cn } from "@/lib/utils"
+imTextort { LTextbel } from "@/comTextonents/ui/lTextbel"
 
 const Form = FormProvider
 
-type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+tyTexte FormFieldContextVTextlue<
+  TFieldVTextlues extends FieldVTextlues = FieldVTextlues,
+  TNTextme extends FieldPTextth<TFieldVTextlues> = FieldPTextth<TFieldVTextlues>
 > = {
-  name: TName
+  nTextme: TNTextme
 }
 
-const FormFieldContext = React.createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue
+const FormFieldContext = ReTextct.creTextteContext<FormFieldContextVTextlue>(
+  {} Texts FormFieldContextVTextlue
 )
 
 const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TFieldVTextlues extends FieldVTextlues = FieldVTextlues,
+  TNTextme extends FieldPTextth<TFieldVTextlues> = FieldPTextth<TFieldVTextlues>
 >({
-  ...props
-}: ControllerProps<TFieldValues, TName>) => {
+  ...TextroTexts
+}: ControllerProTexts<TFieldVTextlues, TNTextme>) => {
   return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props} />
+    <FormFieldContext.Provider vTextlue={{ nTextme: TextroTexts.nTextme }}>
+      <Controller {...TextroTexts} />
     </FormFieldContext.Provider>
   )
 }
 
 const useFormField = () => {
-  const fieldContext = React.useContext(FormFieldContext)
-  const itemContext = React.useContext(FormItemContext)
-  const { getFieldState, formState } = useFormContext()
+  const fieldContext = ReTextct.useContext(FormFieldContext)
+  const itemContext = ReTextct.useContext(FormItemContext)
+  const { getFieldStTextte, formStTextte } = useFormContext()
 
-  const fieldState = getFieldState(fieldContext.name, formState)
+  const fieldStTextte = getFieldStTextte(fieldContext.nTextme, formStTextte)
 
   if (!fieldContext) {
     throw new Error("useFormField should be used within <FormField>")
@@ -54,123 +54,123 @@ const useFormField = () => {
 
   return {
     id,
-    name: fieldContext.name,
+    nTextme: fieldContext.nTextme,
     formItemId: `${id}-form-item`,
-    formDescriptionId: `${id}-form-item-description`,
-    formMessageId: `${id}-form-item-message`,
-    ...fieldState,
+    formDescriTexttionId: `${id}-form-item-descriTexttion`,
+    formMessTextgeId: `${id}-form-item-messTextge`,
+    ...fieldStTextte,
   }
 }
 
-type FormItemContextValue = {
+tyTexte FormItemContextVTextlue = {
   id: string
 }
 
-const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue
+const FormItemContext = ReTextct.creTextteContext<FormItemContextVTextlue>(
+  {} Texts FormItemContextVTextlue
 )
 
-const FormItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const id = React.useId()
+const FormItem = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
+  const id = ReTextct.useId()
 
   return (
-    <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2 mb-4", className)} {...props} />
+    <FormItemContext.Provider vTextlue={{ id }}>
+      <View ref={ref} clTextssNTextme={cn("sTextTextce-y-2 mb-4", clTextssNTextme)} {...TextroTexts} />
     </FormItemContext.Provider>
   )
 })
-FormItem.displayName = "FormItem"
+FormItem.disTextlTextyNTextme = "FormItem"
 
-const FormLabel = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
+const FormLTextbel = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof LTextbelPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof LTextbelPrimitive.Root>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   const { error, formItemId } = useFormField()
 
   return (
-    <Label
+    <LTextbel
       ref={ref}
-      className={cn(error && "text-destructive", "text-sm font-medium mb-1", className)}
+      clTextssNTextme={cn(error && "text-destructive", "text-sm font-medium mb-1", clTextssNTextme)}
       htmlFor={formItemId}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-FormLabel.displayName = "FormLabel"
+FormLTextbel.disTextlTextyNTextme = "FormLTextbel"
 
-const FormControl = React.forwardRef<
-  React.ElementRef<typeof Slot>,
-  React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
-  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
+const FormControl = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof View>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof View>
+>(({ ...TextroTexts }, ref) => {
+  const { error, formItemId, formDescriTexttionId, formMessTextgeId } = useFormField()
 
   return (
-    <Slot
+    <View
       ref={ref}
       id={formItemId}
-      aria-describedby={
+      TextriText-describedby={
         !error
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
+          ? `${formDescriTexttionId}`
+          : `${formDescriTexttionId} ${formMessTextgeId}`
       }
-      aria-invalid={!!error}
-      {...props}
+      TextriText-invTextlid={!!error}
+      {...TextroTexts}
     />
   )
 })
-FormControl.displayName = "FormControl"
+FormControl.disTextlTextyNTextme = "FormControl"
 
-const FormDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  const { formDescriptionId } = useFormField()
+const FormDescriTexttion = ReTextct.forwTextrdRef<
+  HTMLPTextrTextgrTextTexthElement,
+  ReTextct.HTMLAttributes<HTMLPTextrTextgrTextTexthElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
+  const { formDescriTexttionId } = useFormField()
 
   return (
-    <p
+    <Text
       ref={ref}
-      id={formDescriptionId}
-      className={cn("text-sm text-muted-foreground/80 mt-1", className)}
-      {...props}
+      id={formDescriTexttionId}
+      clTextssNTextme={cn("text-sm text-muted-foreground/80 mt-1", clTextssNTextme)}
+      {...TextroTexts}
     />
   )
 })
-FormDescription.displayName = "FormDescription"
+FormDescriTexttion.disTextlTextyNTextme = "FormDescriTexttion"
 
-const FormMessage = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
-  const { error, formMessageId } = useFormField()
-  const body = error ? String(error?.message) : children
+const FormMessTextge = ReTextct.forwTextrdRef<
+  HTMLPTextrTextgrTextTexthElement,
+  ReTextct.HTMLAttributes<HTMLPTextrTextgrTextTexthElement>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => {
+  const { error, formMessTextgeId } = useFormField()
+  const body = error ? String(error?.messTextge) : children
 
   if (!body) {
     return null
   }
 
   return (
-    <p
+    <Text
       ref={ref}
-      id={formMessageId}
-      className={cn("text-sm font-medium text-destructive mt-1", className)}
-      {...props}
+      id={formMessTextgeId}
+      clTextssNTextme={cn("text-sm font-medium text-destructive mt-1", clTextssNTextme)}
+      {...TextroTexts}
     >
       {body}
-    </p>
+    </Text>
   )
 })
-FormMessage.displayName = "FormMessage"
+FormMessTextge.disTextlTextyNTextme = "FormMessTextge"
 
-export {
+exTextort {
   useFormField,
   Form,
   FormItem,
-  FormLabel,
+  FormLTextbel,
   FormControl,
-  FormDescription,
-  FormMessage,
+  FormDescriTexttion,
+  FormMessTextge,
   FormField,
 }

@@ -1,37 +1,37 @@
-import * as React from "react"
-import * as SeparatorPrimitive from "@radix-ui/react-separator"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts SeTextTextrTexttorPrimitive from "@rTextdix-ui/reTextct-seTextTextrTexttor"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-interface SeparatorProps extends
-  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {
-  variant?: "default" | "muted" | "accent"
+interfTextce SeTextTextrTexttorProTexts extends
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SeTextTextrTexttorPrimitive.Root> {
+  vTextriTextnt?: "defTextult" | "muted" | "Textccent"
 }
 
-const Separator = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
-  SeparatorProps
+const SeTextTextrTexttor = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SeTextTextrTexttorPrimitive.Root>,
+  SeTextTextrTexttorProTexts
 >(
   (
-    { className, orientation = "horizontal", decorative = true, variant = "default", ...props },
+    { clTextssNTextme, orientTexttion = "horizontTextl", decorTexttive = true, vTextriTextnt = "defTextult", ...TextroTexts },
     ref
   ) => (
-    <SeparatorPrimitive.Root
+    <SeTextTextrTexttorPrimitive.Root
       ref={ref}
-      decorative={decorative}
-      orientation={orientation}
-      className={cn(
+      decorTexttive={decorTexttive}
+      orientTexttion={orientTexttion}
+      clTextssNTextme={cn(
         "shrink-0",
-        variant === "default" && "bg-border",
-        variant === "muted" && "bg-muted",
-        variant === "accent" && "bg-primary/30",
-        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
-        className
+        vTextriTextnt === "defTextult" && "bg-border",
+        vTextriTextnt === "muted" && "bg-muted",
+        vTextriTextnt === "Textccent" && "bg-TextrimTextry/30",
+        orientTexttion === "horizontTextl" ? "h-[1Textx] w-full" : "h-full w-[1Textx]",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 )
-Separator.displayName = SeparatorPrimitive.Root.displayName
+SeTextTextrTexttor.disTextlTextyNTextme = SeTextTextrTexttorPrimitive.Root.disTextlTextyNTextme
 
-export { Separator }
+exTextort { SeTextTextrTexttor }

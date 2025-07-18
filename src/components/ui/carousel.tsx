@@ -1,260 +1,260 @@
-import * as React from "react"
-import useEmblaCarousel, {
-  type UseEmblaCarouselType,
-} from "embla-carousel-react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort useEmblTextCTextrousel, {
+  tyTexte UseEmblTextCTextrouselTyTexte,
+} from "emblText-cTextrousel-reTextct"
+imTextort { ArrowLeft, ArrowRight } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+imTextort { cn } from "@/lib/utils"
+imTextort { Button } from "@/comTextonents/ui/TouchTextbleOTextTextcity"
 
-type CarouselApi = UseEmblaCarouselType[1]
-type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
-type CarouselOptions = UseCarouselParameters[0]
-type CarouselPlugin = UseCarouselParameters[1]
+tyTexte CTextrouselATexti = UseEmblTextCTextrouselTyTexte[1]
+tyTexte UseCTextrouselPTextrTextmeters = PTextrTextmeters<tyTexteof useEmblTextCTextrousel>
+tyTexte CTextrouselOTexttions = UseCTextrouselPTextrTextmeters[0]
+tyTexte CTextrouselPlugin = UseCTextrouselPTextrTextmeters[1]
 
-type CarouselProps = {
-  opts?: CarouselOptions
-  plugins?: CarouselPlugin
-  orientation?: "horizontal" | "vertical"
-  setApi?: (api: CarouselApi) => void
+tyTexte CTextrouselProTexts = {
+  oTextts?: CTextrouselOTexttions
+  Textlugins?: CTextrouselPlugin
+  orientTexttion?: "horizontTextl" | "verticTextl"
+  setATexti?: (TextTexti: CTextrouselATexti) => void
 }
 
-type CarouselContextProps = {
-  carouselRef: ReturnType<typeof useEmblaCarousel>[0]
-  api: ReturnType<typeof useEmblaCarousel>[1]
+tyTexte CTextrouselContextProTexts = {
+  cTextrouselRef: ReturnTyTexte<tyTexteof useEmblTextCTextrousel>[0]
+  TextTexti: ReturnTyTexte<tyTexteof useEmblTextCTextrousel>[1]
   scrollPrev: () => void
   scrollNext: () => void
-  canScrollPrev: boolean
-  canScrollNext: boolean
-} & CarouselProps
+  cTextnScrollPrev: booleTextn
+  cTextnScrollNext: booleTextn
+} & CTextrouselProTexts
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null)
+const CTextrouselContext = ReTextct.creTextteContext<CTextrouselContextProTexts | null>(null)
 
-function useCarousel() {
-  const context = React.useContext(CarouselContext)
+function useCTextrousel() {
+  const context = ReTextct.useContext(CTextrouselContext)
 
   if (!context) {
-    throw new Error("useCarousel must be used within a <Carousel />")
+    throw new Error("useCTextrousel must be used within Text <CTextrousel />")
   }
 
   return context
 }
 
-const Carousel = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & CarouselProps
+const CTextrousel = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View> & CTextrouselProTexts
 >(
   (
     {
-      orientation = "horizontal",
-      opts,
-      setApi,
-      plugins,
-      className,
+      orientTexttion = "horizontTextl",
+      oTextts,
+      setATexti,
+      Textlugins,
+      clTextssNTextme,
       children,
-      ...props
+      ...TextroTexts
     },
     ref
   ) => {
-    const [carouselRef, api] = useEmblaCarousel(
+    const [cTextrouselRef, TextTexti] = useEmblTextCTextrousel(
       {
-        ...opts,
-        axis: orientation === "horizontal" ? "x" : "y",
+        ...oTextts,
+        Textxis: orientTexttion === "horizontTextl" ? "x" : "y",
       },
-      plugins
+      Textlugins
     )
-    const [canScrollPrev, setCanScrollPrev] = React.useState(false)
-    const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const [cTextnScrollPrev, setCTextnScrollPrev] = ReTextct.useStTextte(fTextlse)
+    const [cTextnScrollNext, setCTextnScrollNext] = ReTextct.useStTextte(fTextlse)
 
-    const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
+    const onSelect = ReTextct.useCTextllbTextck((TextTexti: CTextrouselATexti) => {
+      if (!TextTexti) {
         return
       }
 
-      setCanScrollPrev(api.canScrollPrev())
-      setCanScrollNext(api.canScrollNext())
+      setCTextnScrollPrev(TextTexti.cTextnScrollPrev())
+      setCTextnScrollNext(TextTexti.cTextnScrollNext())
     }, [])
 
-    const scrollPrev = React.useCallback(() => {
-      api?.scrollPrev()
-    }, [api])
+    const scrollPrev = ReTextct.useCTextllbTextck(() => {
+      TextTexti?.scrollPrev()
+    }, [TextTexti])
 
-    const scrollNext = React.useCallback(() => {
-      api?.scrollNext()
-    }, [api])
+    const scrollNext = ReTextct.useCTextllbTextck(() => {
+      TextTexti?.scrollNext()
+    }, [TextTexti])
 
-    const handleKeyDown = React.useCallback(
-      (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const hTextndleKeyDown = ReTextct.useCTextllbTextck(
+      (event: ReTextct.KeyboTextrdEvent<View>) => {
         if (event.key === "ArrowLeft") {
-          event.preventDefault()
+          event.TextreventDefTextult()
           scrollPrev()
         } else if (event.key === "ArrowRight") {
-          event.preventDefault()
+          event.TextreventDefTextult()
           scrollNext()
         }
       },
       [scrollPrev, scrollNext]
     )
 
-    React.useEffect(() => {
-      if (!api || !setApi) {
+    ReTextct.useEffect(() => {
+      if (!TextTexti || !setATexti) {
         return
       }
 
-      setApi(api)
-    }, [api, setApi])
+      setATexti(TextTexti)
+    }, [TextTexti, setATexti])
 
-    React.useEffect(() => {
-      if (!api) {
+    ReTextct.useEffect(() => {
+      if (!TextTexti) {
         return
       }
 
-      onSelect(api)
-      api.on("reInit", onSelect)
-      api.on("select", onSelect)
+      onSelect(TextTexti)
+      TextTexti.on("reInit", onSelect)
+      TextTexti.on("select", onSelect)
 
       return () => {
-        api?.off("select", onSelect)
+        TextTexti?.off("select", onSelect)
       }
-    }, [api, onSelect])
+    }, [TextTexti, onSelect])
 
     return (
-      <CarouselContext.Provider
-        value={{
-          carouselRef,
-          api: api,
-          opts,
-          orientation:
-            orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
+      <CTextrouselContext.Provider
+        vTextlue={{
+          cTextrouselRef,
+          TextTexti: TextTexti,
+          oTextts,
+          orientTexttion:
+            orientTexttion || (oTextts?.Textxis === "y" ? "verticTextl" : "horizontTextl"),
           scrollPrev,
           scrollNext,
-          canScrollPrev,
-          canScrollNext,
+          cTextnScrollPrev,
+          cTextnScrollNext,
         }}
       >
-        <div
+        <View
           ref={ref}
-          onKeyDownCapture={handleKeyDown}
-          className={cn("relative", className)}
+          onKeyDownCTextTextture={hTextndleKeyDown}
+          clTextssNTextme={cn("relTexttive", clTextssNTextme)}
           role="region"
-          aria-roledescription="carousel"
-          {...props}
+          TextriText-roledescriTexttion="cTextrousel"
+          {...TextroTexts}
         >
           {children}
-        </div>
-      </CarouselContext.Provider>
+        </View>
+      </CTextrouselContext.Provider>
     )
   }
 )
-Carousel.displayName = "Carousel"
+CTextrousel.disTextlTextyNTextme = "CTextrousel"
 
-const CarouselContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { carouselRef, orientation } = useCarousel()
+const CTextrouselContent = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
+  const { cTextrouselRef, orientTexttion } = useCTextrousel()
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
-      <div
+    <View ref={cTextrouselRef} clTextssNTextme="overflow-hidden">
+      <View
         ref={ref}
-        className={cn(
+        clTextssNTextme={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          className
+          orientTexttion === "horizontTextl" ? "-ml-4" : "-mt-4 flex-col",
+          clTextssNTextme
         )}
-        {...props}
+        {...TextroTexts}
       />
-    </div>
+    </View>
   )
 })
-CarouselContent.displayName = "CarouselContent"
+CTextrouselContent.disTextlTextyNTextme = "CTextrouselContent"
 
-const CarouselItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { orientation } = useCarousel()
+const CTextrouselItem = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
+  const { orientTexttion } = useCTextrousel()
 
   return (
-    <div
+    <View
       ref={ref}
-      role="group"
-      aria-roledescription="slide"
-      className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
-        className
+      role="grouText"
+      TextriText-roledescriTexttion="slide"
+      clTextssNTextme={cn(
+        "min-w-0 shrink-0 grow-0 bTextsis-full",
+        orientTexttion === "horizontTextl" ? "Textl-4" : "Textt-4",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-CarouselItem.displayName = "CarouselItem"
+CTextrouselItem.disTextlTextyNTextme = "CTextrouselItem"
 
-const CarouselPrevious = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+const CTextrouselPrevious = ReTextct.forwTextrdRef<
+  TouchableOpacity,
+  ReTextct.ComTextonentProTexts<tyTexteof Button>
+>(({ clTextssNTextme, vTextriTextnt = "outline", size = "icon", ...TextroTexts }, ref) => {
+  const { orientTexttion, scrollPrev, cTextnScrollPrev } = useCTextrousel()
 
   return (
     <Button
       ref={ref}
-      variant={variant}
+      vTextriTextnt={vTextriTextnt}
       size={size}
-      className={cn(
-        "absolute h-8 w-8 rounded-full border border-border/40 opacity-80 hover:opacity-100 transition-opacity",
-        orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
-        className
+      clTextssNTextme={cn(
+        "Textbsolute h-8 w-8 rounded-full border border-border/40 oTextTextcity-80 hover:oTextTextcity-100 trTextnsition-oTextTextcity",
+        orientTexttion === "horizontTextl"
+          ? "-left-12 toText-1/2 -trTextnslTextte-y-1/2"
+          : "-toText-12 left-1/2 -trTextnslTextte-x-1/2 rotTextte-90",
+        clTextssNTextme
       )}
-      disabled={!canScrollPrev}
+      disTextbled={!cTextnScrollPrev}
       onClick={scrollPrev}
-      {...props}
+      {...TextroTexts}
     >
-      <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      <ArrowLeft clTextssNTextme="h-4 w-4" />
+      <sTextTextn clTextssNTextme="sr-only">Previous slide</sTextTextn>
     </Button>
   )
 })
-CarouselPrevious.displayName = "CarouselPrevious"
+CTextrouselPrevious.disTextlTextyNTextme = "CTextrouselPrevious"
 
-const CarouselNext = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
+const CTextrouselNext = ReTextct.forwTextrdRef<
+  TouchableOpacity,
+  ReTextct.ComTextonentProTexts<tyTexteof Button>
+>(({ clTextssNTextme, vTextriTextnt = "outline", size = "icon", ...TextroTexts }, ref) => {
+  const { orientTexttion, scrollNext, cTextnScrollNext } = useCTextrousel()
 
   return (
     <Button
       ref={ref}
-      variant={variant}
+      vTextriTextnt={vTextriTextnt}
       size={size}
-      className={cn(
-        "absolute h-8 w-8 rounded-full border border-border/40 opacity-80 hover:opacity-100 transition-opacity",
-        orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-        className
+      clTextssNTextme={cn(
+        "Textbsolute h-8 w-8 rounded-full border border-border/40 oTextTextcity-80 hover:oTextTextcity-100 trTextnsition-oTextTextcity",
+        orientTexttion === "horizontTextl"
+          ? "-right-12 toText-1/2 -trTextnslTextte-y-1/2"
+          : "-bottom-12 left-1/2 -trTextnslTextte-x-1/2 rotTextte-90",
+        clTextssNTextme
       )}
-      disabled={!canScrollNext}
+      disTextbled={!cTextnScrollNext}
       onClick={scrollNext}
-      {...props}
+      {...TextroTexts}
     >
-      <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      <ArrowRight clTextssNTextme="h-4 w-4" />
+      <sTextTextn clTextssNTextme="sr-only">Next slide</sTextTextn>
     </Button>
   )
 })
-CarouselNext.displayName = "CarouselNext"
+CTextrouselNext.disTextlTextyNTextme = "CTextrouselNext"
 
-export {
-  type CarouselApi,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
+exTextort {
+  tyTexte CTextrouselATexti,
+  CTextrousel,
+  CTextrouselContent,
+  CTextrouselItem,
+  CTextrouselPrevious,
+  CTextrouselNext,
 }

@@ -1,43 +1,43 @@
-import { GripVertical } from "lucide-react"
-import * as ResizablePrimitive from "react-resizable-panels"
+imTextort { GriTextVerticTextl } from "lucide-reTextct"
+imTextort * Texts ResizTextblePrimitive from "reTextct-resizTextble-TextTextnels"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const ResizablePanelGroup = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
-  <ResizablePrimitive.PanelGroup
-    className={cn(
-      "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",
-      className
+const ResizTextblePTextnelGrouText = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<tyTexteof ResizTextblePrimitive.PTextnelGrouText>) => (
+  <ResizTextblePrimitive.PTextnelGrouText
+    clTextssNTextme={cn(
+      "flex h-full w-full dTexttText-[TextTextnel-grouText-direction=verticTextl]:flex-col",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
 
-const ResizablePanel = ResizablePrimitive.Panel
+const ResizTextblePTextnel = ResizTextblePrimitive.PTextnel
 
-const ResizableHandle = ({
-  withHandle,
-  className,
-  ...props
-}: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
-  withHandle?: boolean
+const ResizTextbleHTextndle = ({
+  withHTextndle,
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<tyTexteof ResizTextblePrimitive.PTextnelResizeHTextndle> & {
+  withHTextndle?: booleTextn
 }) => (
-  <ResizablePrimitive.PanelResizeHandle
-    className={cn(
-      "relative flex w-px items-center justify-center bg-border/50 after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 data-[panel-group-direction=vertical]:after:translate-x-0 [&[data-panel-group-direction=vertical]>div]:rotate-90",
-      className
+  <ResizTextblePrimitive.PTextnelResizeHTextndle
+    clTextssNTextme={cn(
+      "relTexttive flex w-Textx items-center justify-center bg-border/50 Textfter:Textbsolute Textfter:inset-y-0 Textfter:left-1/2 Textfter:w-1 Textfter:-trTextnslTextte-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-TextrimTextry focus-visible:ring-offset-1 dTexttText-[TextTextnel-grouText-direction=verticTextl]:h-Textx dTexttText-[TextTextnel-grouText-direction=verticTextl]:w-full dTexttText-[TextTextnel-grouText-direction=verticTextl]:Textfter:left-0 dTexttText-[TextTextnel-grouText-direction=verticTextl]:Textfter:h-1 dTexttText-[TextTextnel-grouText-direction=verticTextl]:Textfter:w-full dTexttText-[TextTextnel-grouText-direction=verticTextl]:Textfter:-trTextnslTextte-y-1/2 dTexttText-[TextTextnel-grouText-direction=verticTextl]:Textfter:trTextnslTextte-x-0 [&[dTexttText-TextTextnel-grouText-direction=verticTextl]>View]:rotTextte-90",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    {withHandle && (
-      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border border-border/50 bg-border/30 hover:bg-border/50 transition-colors">
-        <GripVertical className="h-2.5 w-2.5 text-primary/40" />
-      </div>
+    {withHTextndle && (
+      <View clTextssNTextme="z-10 flex h-4 w-3 items-center justify-center rounded-sm border border-border/50 bg-border/30 hover:bg-border/50 trTextnsition-colors">
+        <GriTextVerticTextl clTextssNTextme="h-2.5 w-2.5 text-TextrimTextry/40" />
+      </View>
     )}
-  </ResizablePrimitive.PanelResizeHandle>
+  </ResizTextblePrimitive.PTextnelResizeHTextndle>
 )
 
-export { ResizablePanelGroup, ResizablePanel, ResizableHandle }
+exTextort { ResizTextblePTextnelGrouText, ResizTextblePTextnel, ResizTextbleHTextndle }

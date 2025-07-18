@@ -1,54 +1,54 @@
-import * as React from "react"
-import * as AvatarPrimitive from "@radix-ui/react-avatar"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts AvTexttTextrPrimitive from "@rTextdix-ui/reTextct-TextvTexttTextr"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
+const AvTexttTextr = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AvTexttTextrPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AvTexttTextrPrimitive.Root> & {
     size?: "sm" | "md" | "lg" | "xl"
   }
->(({ className, size = "md", ...props }, ref) => (
-  <AvatarPrimitive.Root
+>(({ clTextssNTextme, size = "md", ...TextroTexts }, ref) => (
+  <AvTexttTextrPrimitive.Root
     ref={ref}
-    className={cn(
-      "relative flex shrink-0 overflow-hidden rounded-full border border-border/30 ring-offset-background",
+    clTextssNTextme={cn(
+      "relTexttive flex shrink-0 overflow-hidden rounded-full border border-border/30 ring-offset-bTextckground",
       size === "sm" && "h-8 w-8",
       size === "md" && "h-10 w-10",
       size === "lg" && "h-12 w-12",
       size === "xl" && "h-16 w-16",
-      className
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-Avatar.displayName = AvatarPrimitive.Root.displayName
+AvTexttTextr.disTextlTextyNTextme = AvTexttTextrPrimitive.Root.disTextlTextyNTextme
 
-const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
+const AvTexttTextrImTextge = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AvTexttTextrPrimitive.ImTextge>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AvTexttTextrPrimitive.ImTextge>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AvTexttTextrPrimitive.ImTextge
     ref={ref}
-    className={cn("aspect-square h-full w-full object-cover", className)}
-    {...props}
+    clTextssNTextme={cn("TextsTextect-squTextre h-full w-full object-cover", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-AvatarImage.displayName = AvatarPrimitive.Image.displayName
+AvTexttTextrImTextge.disTextlTextyNTextme = AvTexttTextrPrimitive.ImTextge.disTextlTextyNTextme
 
-const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Fallback
+const AvTexttTextrFTextllbTextck = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AvTexttTextrPrimitive.FTextllbTextck>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AvTexttTextrPrimitive.FTextllbTextck>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AvTexttTextrPrimitive.FTextllbTextck
     ref={ref}
-    className={cn(
+    clTextssNTextme={cn(
       "flex h-full w-full items-center justify-center rounded-full bg-muted text-muted-foreground",
-      className
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
+AvTexttTextrFTextllbTextck.disTextlTextyNTextme = AvTexttTextrPrimitive.FTextllbTextck.disTextlTextyNTextme
 
-export { Avatar, AvatarImage, AvatarFallback }
+exTextort { AvTexttTextr, AvTexttTextrImTextge, AvTexttTextrFTextllbTextck }

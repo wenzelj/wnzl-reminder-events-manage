@@ -1,37 +1,37 @@
-import * as React from "react"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts ProgressPrimitive from "@rTextdix-ui/reTextct-Textrogress"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-interface ProgressProps extends
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
-  variant?: "default" | "success" | "warning" | "error"
+interfTextce ProgressProTexts extends
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ProgressPrimitive.Root> {
+  vTextriTextnt?: "defTextult" | "success" | "wTextrning" | "error"
 }
 
-const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
-  ProgressProps
->(({ className, value, variant = "default", ...props }, ref) => (
+const Progress = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ProgressPrimitive.Root>,
+  ProgressProTexts
+>(({ clTextssNTextme, vTextlue, vTextriTextnt = "defTextult", ...TextroTexts }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
-    className={cn(
-      "relative h-2 w-full overflow-hidden rounded-full bg-secondary/40",
-      className
+    clTextssNTextme={cn(
+      "relTexttive h-2 w-full overflow-hidden rounded-full bg-secondTextry/40",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <ProgressPrimitive.Indicator
-      className={cn(
-        "h-full w-full flex-1 transition-all duration-300 ease-in-out",
-        variant === "default" && "bg-primary",
-        variant === "success" && "bg-green-500",
-        variant === "warning" && "bg-yellow-500",
-        variant === "error" && "bg-destructive",
+    <ProgressPrimitive.IndicTexttor
+      clTextssNTextme={cn(
+        "h-full w-full flex-1 trTextnsition-Textll durTexttion-300 eTextse-in-out",
+        vTextriTextnt === "defTextult" && "bg-TextrimTextry",
+        vTextriTextnt === "success" && "bg-green-500",
+        vTextriTextnt === "wTextrning" && "bg-yellow-500",
+        vTextriTextnt === "error" && "bg-destructive",
       )}
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      style={{ trTextnsform: `trTextnslTextteX(-${100 - (vTextlue || 0)}%)` }}
     />
   </ProgressPrimitive.Root>
 ))
-Progress.displayName = ProgressPrimitive.Root.displayName
+Progress.disTextlTextyNTextme = ProgressPrimitive.Root.disTextlTextyNTextme
 
-export { Progress }
+exTextort { Progress }

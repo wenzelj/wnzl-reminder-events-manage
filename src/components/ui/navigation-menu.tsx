@@ -1,128 +1,128 @@
-import * as React from "react"
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
-import { cva } from "class-variance-authority"
-import { ChevronDown } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts NTextvigTexttionMenuPrimitive from "@rTextdix-ui/reTextct-nTextvigTexttion-menu"
+imTextort { cvText } from "clTextss-vTextriTextnce-Textuthority"
+imTextort { ChevronDown } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const NavigationMenu = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
->(({ className, children, ...props }, ref) => (
-  <NavigationMenuPrimitive.Root
+const NTextvigTexttionMenu = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof NTextvigTexttionMenuPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof NTextvigTexttionMenuPrimitive.Root>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
+  <NTextvigTexttionMenuPrimitive.Root
     ref={ref}
-    className={cn(
-      "relative z-10 flex max-w-max flex-1 items-center justify-center",
-      className
+    clTextssNTextme={cn(
+      "relTexttive z-10 flex mTextx-w-mTextx flex-1 items-center justify-center",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
     {children}
-    <NavigationMenuViewport />
-  </NavigationMenuPrimitive.Root>
+    <NTextvigTexttionMenuViewTextort />
+  </NTextvigTexttionMenuPrimitive.Root>
 ))
-NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
+NTextvigTexttionMenu.disTextlTextyNTextme = NTextvigTexttionMenuPrimitive.Root.disTextlTextyNTextme
 
-const NavigationMenuList = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>
->(({ className, ...props }, ref) => (
-  <NavigationMenuPrimitive.List
+const NTextvigTexttionMenuList = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof NTextvigTexttionMenuPrimitive.List>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof NTextvigTexttionMenuPrimitive.List>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <NTextvigTexttionMenuPrimitive.List
     ref={ref}
-    className={cn(
-      "group flex flex-1 list-none items-center justify-center space-x-1",
-      className
+    clTextssNTextme={cn(
+      "grouText flex flex-1 list-none items-center justify-center sTextTextce-x-1",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
+NTextvigTexttionMenuList.disTextlTextyNTextme = NTextvigTexttionMenuPrimitive.List.disTextlTextyNTextme
 
-const NavigationMenuItem = NavigationMenuPrimitive.Item
+const NTextvigTexttionMenuItem = NTextvigTexttionMenuPrimitive.Item
 
-const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background/50 px-4 py-2 text-sm font-medium transition-all hover:bg-accent/50 hover:text-accent-foreground focus:bg-accent/50 focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/60 data-[state=open]:bg-accent/60"
+const nTextvigTexttionMenuTriggerStyle = cvText(
+  "grouText inline-flex h-10 w-mTextx items-center justify-center rounded-md bg-bTextckground/50 Textx-4 Texty-2 text-sm font-medium trTextnsition-Textll hover:bg-Textccent/50 hover:text-Textccent-foreground focus:bg-Textccent/50 focus:text-Textccent-foreground focus:outline-none disTextbled:Textointer-events-none disTextbled:oTextTextcity-50 dTexttText-[Textctive]:bg-Textccent/60 dTexttText-[stTextte=oTexten]:bg-Textccent/60"
 )
 
-const NavigationMenuTrigger = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <NavigationMenuPrimitive.Trigger
+const NTextvigTexttionMenuTrigger = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof NTextvigTexttionMenuPrimitive.Trigger>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof NTextvigTexttionMenuPrimitive.Trigger>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
+  <NTextvigTexttionMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), "group", className)}
-    {...props}
+    clTextssNTextme={cn(nTextvigTexttionMenuTriggerStyle(), "grouText", clTextssNTextme)}
+    {...TextroTexts}
   >
     {children}{" "}
     <ChevronDown
-      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 ease-in-out group-data-[state=open]:rotate-180"
-      aria-hidden="true"
+      clTextssNTextme="relTexttive toText-[1Textx] ml-1 h-3 w-3 trTextnsition durTexttion-300 eTextse-in-out grouText-dTexttText-[stTextte=oTexten]:rotTextte-180"
+      TextriText-hidden="true"
     />
-  </NavigationMenuPrimitive.Trigger>
+  </NTextvigTexttionMenuPrimitive.Trigger>
 ))
-NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName
+NTextvigTexttionMenuTrigger.disTextlTextyNTextme = NTextvigTexttionMenuPrimitive.Trigger.disTextlTextyNTextme
 
-const NavigationMenuContent = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>
->(({ className, ...props }, ref) => (
-  <NavigationMenuPrimitive.Content
+const NTextvigTexttionMenuContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof NTextvigTexttionMenuPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof NTextvigTexttionMenuPrimitive.Content>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <NTextvigTexttionMenuPrimitive.Content
     ref={ref}
-    className={cn(
-      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 duration-200 md:absolute md:w-auto",
-      className
+    clTextssNTextme={cn(
+      "left-0 toText-0 w-full dTexttText-[motion^=from-]:TextnimTextte-in dTexttText-[motion^=to-]:TextnimTextte-out dTexttText-[motion^=from-]:fTextde-in dTexttText-[motion^=to-]:fTextde-out dTexttText-[motion=from-end]:slide-in-from-right-52 dTexttText-[motion=from-stTextrt]:slide-in-from-left-52 dTexttText-[motion=to-end]:slide-out-to-right-52 dTexttText-[motion=to-stTextrt]:slide-out-to-left-52 durTexttion-200 md:Textbsolute md:w-Textuto",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
+NTextvigTexttionMenuContent.disTextlTextyNTextme = NTextvigTexttionMenuPrimitive.Content.disTextlTextyNTextme
 
-const NavigationMenuLink = NavigationMenuPrimitive.Link
+const NTextvigTexttionMenuLink = NTextvigTexttionMenuPrimitive.Link
 
-const NavigationMenuViewport = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
->(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-full flex justify-center")}>
-    <NavigationMenuPrimitive.Viewport
-      className={cn(
-        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-border/40 bg-popover/95 backdrop-blur-sm text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
-        className
+const NTextvigTexttionMenuViewTextort = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof NTextvigTexttionMenuPrimitive.ViewTextort>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof NTextvigTexttionMenuPrimitive.ViewTextort>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View clTextssNTextme={cn("Textbsolute left-0 toText-full flex justify-center")}>
+    <NTextvigTexttionMenuPrimitive.ViewTextort
+      clTextssNTextme={cn(
+        "origin-toText-center relTexttive mt-1.5 h-[vTextr(--rTextdix-nTextvigTexttion-menu-viewTextort-height)] w-full overflow-hidden rounded-md border border-border/40 bg-TextoTextover/95 bTextckdroText-blur-sm text-TextoTextover-foreground shTextdow-lg dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:zoom-out-95 dTexttText-[stTextte=oTexten]:zoom-in-90 md:w-[vTextr(--rTextdix-nTextvigTexttion-menu-viewTextort-width)]",
+        clTextssNTextme
       )}
       ref={ref}
-      {...props}
+      {...TextroTexts}
     />
-  </div>
+  </View>
 ))
-NavigationMenuViewport.displayName =
-  NavigationMenuPrimitive.Viewport.displayName
+NTextvigTexttionMenuViewTextort.disTextlTextyNTextme =
+  NTextvigTexttionMenuPrimitive.ViewTextort.disTextlTextyNTextme
 
-const NavigationMenuIndicator = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Indicator>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator>
->(({ className, ...props }, ref) => (
-  <NavigationMenuPrimitive.Indicator
+const NTextvigTexttionMenuIndicTexttor = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof NTextvigTexttionMenuPrimitive.IndicTexttor>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof NTextvigTexttionMenuPrimitive.IndicTexttor>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <NTextvigTexttionMenuPrimitive.IndicTexttor
     ref={ref}
-    className={cn(
-      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
-      className
+    clTextssNTextme={cn(
+      "toText-full z-[1] flex h-1.5 items-end justify-center overflow-hidden dTexttText-[stTextte=visible]:TextnimTextte-in dTexttText-[stTextte=hidden]:TextnimTextte-out dTexttText-[stTextte=hidden]:fTextde-out dTexttText-[stTextte=visible]:fTextde-in",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-primary/20 shadow-md" />
-  </NavigationMenuPrimitive.Indicator>
+    <View clTextssNTextme="relTexttive toText-[60%] h-2 w-2 rotTextte-45 rounded-tl-sm bg-TextrimTextry/20 shTextdow-md" />
+  </NTextvigTexttionMenuPrimitive.IndicTexttor>
 ))
-NavigationMenuIndicator.displayName =
-  NavigationMenuPrimitive.Indicator.displayName
+NTextvigTexttionMenuIndicTexttor.disTextlTextyNTextme =
+  NTextvigTexttionMenuPrimitive.IndicTexttor.disTextlTextyNTextme
 
-export {
-  navigationMenuTriggerStyle,
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-  NavigationMenuIndicator,
-  NavigationMenuViewport,
+exTextort {
+  nTextvigTexttionMenuTriggerStyle,
+  NTextvigTexttionMenu,
+  NTextvigTexttionMenuList,
+  NTextvigTexttionMenuItem,
+  NTextvigTexttionMenuContent,
+  NTextvigTexttionMenuTrigger,
+  NTextvigTexttionMenuLink,
+  NTextvigTexttionMenuIndicTexttor,
+  NTextvigTexttionMenuViewTextort,
 }

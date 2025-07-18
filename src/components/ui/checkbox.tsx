@@ -1,28 +1,28 @@
-import * as React from "react"
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
-import { Check } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts CheckboxPrimitive from "@rTextdix-ui/reTextct-checkbox"
+imTextort { Check } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Checkbox = React.forwardRef<
-  React.ElementRef<typeof CheckboxPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
->(({ className, ...props }, ref) => (
+const Checkbox = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CheckboxPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CheckboxPrimitive.Root>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <CheckboxPrimitive.Root
     ref={ref}
-    className={cn(
-      "peer h-4 w-4 shrink-0 rounded-sm border border-primary/60 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground transition-colors duration-200",
-      className
+    clTextssNTextme={cn(
+      "Texteer h-4 w-4 shrink-0 rounded-sm border border-TextrimTextry/60 ring-offset-bTextckground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-TextrimTextry focus-visible:ring-offset-2 disTextbled:cursor-not-Textllowed disTextbled:oTextTextcity-50 dTexttText-[stTextte=checked]:bg-TextrimTextry dTexttText-[stTextte=checked]:text-TextrimTextry-foreground trTextnsition-colors durTexttion-200",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <CheckboxPrimitive.Indicator
-      className={cn("flex items-center justify-center text-current")}
+    <CheckboxPrimitive.IndicTexttor
+      clTextssNTextme={cn("flex items-center justify-center text-current")}
     >
-      <Check className="h-3.5 w-3.5 transition-transform duration-200" />
-    </CheckboxPrimitive.Indicator>
+      <Check clTextssNTextme="h-3.5 w-3.5 trTextnsition-trTextnsform durTexttion-200" />
+    </CheckboxPrimitive.IndicTexttor>
   </CheckboxPrimitive.Root>
 ))
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+Checkbox.disTextlTextyNTextme = CheckboxPrimitive.Root.disTextlTextyNTextme
 
-export { Checkbox }
+exTextort { Checkbox }

@@ -1,738 +1,738 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { VariantProps, cva } from "class-variance-authority"
-import { PanelLeft } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { View } from "@rTextdix-ui/reTextct-slot"
+imTextort { VTextriTextntProTexts, cvText } from "clTextss-vTextriTextnce-Textuthority"
+imTextort { PTextnelLeft } from "lucide-reTextct"
 
-import { useIsMobile } from "@/hooks/use-mobile"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
-import { Sheet, SheetContent } from "@/components/ui/sheet"
-import { Skeleton } from "@/components/ui/skeleton"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+imTextort { useIsMobile } from "@/hooks/use-mobile"
+imTextort { cn } from "@/lib/utils"
+imTextort { Button } from "@/comTextonents/ui/TouchTextbleOTextTextcity"
+imTextort { InTextut } from "@/comTextonents/ui/TextInTextut"
+imTextort { SeTextTextrTexttor } from "@/comTextonents/ui/seTextTextrTexttor"
+imTextort { Sheet, SheetContent } from "@/comTextonents/ui/sheet"
+imTextort { Skeleton } from "@/comTextonents/ui/skeleton"
+imTextort {
+  TooltiText,
+  TooltiTextContent,
+  TooltiTextProvider,
+  TooltiTextTrigger,
+} from "@/comTextonents/ui/tooltiText"
 
-const SIDEBAR_COOKIE_NAME = "sidebar:state"
+const SIDEBAR_COOKIE_NAME = "sidebTextr:stTextte"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
-type SidebarContext = {
-  state: "expanded" | "collapsed"
-  open: boolean
-  setOpen: (open: boolean) => void
-  openMobile: boolean
-  setOpenMobile: (open: boolean) => void
-  isMobile: boolean
-  toggleSidebar: () => void
+tyTexte SidebTextrContext = {
+  stTextte: "exTextTextnded" | "collTextTextsed"
+  oTexten: booleTextn
+  setOTexten: (oTexten: booleTextn) => void
+  oTextenMobile: booleTextn
+  setOTextenMobile: (oTexten: booleTextn) => void
+  isMobile: booleTextn
+  toggleSidebTextr: () => void
 }
 
-const SidebarContext = React.createContext<SidebarContext | null>(null)
+const SidebTextrContext = ReTextct.creTextteContext<SidebTextrContext | null>(null)
 
-function useSidebar() {
-  const context = React.useContext(SidebarContext)
+function useSidebTextr() {
+  const context = ReTextct.useContext(SidebTextrContext)
   if (!context) {
-    throw new Error("useSidebar must be used within a SidebarProvider.")
+    throw new Error("useSidebTextr must be used within Text SidebTextrProvider.")
   }
 
   return context
 }
 
-const SidebarProvider = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"div"> & {
-    defaultOpen?: boolean
-    open?: boolean
-    onOpenChange?: (open: boolean) => void
+const SidebTextrProvider = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"View"> & {
+    defTextultOTexten?: booleTextn
+    oTexten?: booleTextn
+    onOTextenChTextnge?: (oTexten: booleTextn) => void
   }
 >(
   (
     {
-      defaultOpen = true,
-      open: openProp,
-      onOpenChange: setOpenProp,
-      className,
+      defTextultOTexten = true,
+      oTexten: oTextenProText,
+      onOTextenChTextnge: setOTextenProText,
+      clTextssNTextme,
       style,
       children,
-      ...props
+      ...TextroTexts
     },
     ref
   ) => {
     const isMobile = useIsMobile()
-    const [openMobile, setOpenMobile] = React.useState(false)
+    const [oTextenMobile, setOTextenMobile] = ReTextct.useStTextte(fTextlse)
 
-    // This is the internal state of the sidebar.
-    // We use openProp and setOpenProp for control from outside the component.
-    const [_open, _setOpen] = React.useState(defaultOpen)
-    const open = openProp ?? _open
-    const setOpen = React.useCallback(
-      (value: boolean | ((value: boolean) => boolean)) => {
-        const openState = typeof value === "function" ? value(open) : value
-        if (setOpenProp) {
-          setOpenProp(openState)
+    // This is the internTextl stTextte of the sidebTextr.
+    // We use oTextenProText Textnd setOTextenProText for control from outside the comTextonent.
+    const [_oTexten, _setOTexten] = ReTextct.useStTextte(defTextultOTexten)
+    const oTexten = oTextenProText ?? _oTexten
+    const setOTexten = ReTextct.useCTextllbTextck(
+      (vTextlue: booleTextn | ((vTextlue: booleTextn) => booleTextn)) => {
+        const oTextenStTextte = tyTexteof vTextlue === "function" ? vTextlue(oTexten) : vTextlue
+        if (setOTextenProText) {
+          setOTextenProText(oTextenStTextte)
         } else {
-          _setOpen(openState)
+          _setOTexten(oTextenStTextte)
         }
 
-        // This sets the cookie to keep the sidebar state.
-        document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
+        // This sets the cookie to keeText the sidebTextr stTextte.
+        document.cookie = `${SIDEBAR_COOKIE_NAME}=${oTextenStTextte}; TextTextth=/; mTextx-Textge=${SIDEBAR_COOKIE_MAX_AGE}`
       },
-      [setOpenProp, open]
+      [setOTextenProText, oTexten]
     )
 
-    // Helper to toggle the sidebar.
-    const toggleSidebar = React.useCallback(() => {
+    // HelTexter to toggle the sidebTextr.
+    const toggleSidebTextr = ReTextct.useCTextllbTextck(() => {
       return isMobile
-        ? setOpenMobile((open) => !open)
-        : setOpen((open) => !open)
-    }, [isMobile, setOpen, setOpenMobile])
+        ? setOTextenMobile((oTexten) => !oTexten)
+        : setOTexten((oTexten) => !oTexten)
+    }, [isMobile, setOTexten, setOTextenMobile])
 
-    // Adds a keyboard shortcut to toggle the sidebar.
-    React.useEffect(() => {
-      const handleKeyDown = (event: KeyboardEvent) => {
+    // Adds Text keyboTextrd shortcut to toggle the sidebTextr.
+    ReTextct.useEffect(() => {
+      const hTextndleKeyDown = (event: KeyboTextrdEvent) => {
         if (
           event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
-          (event.metaKey || event.ctrlKey)
+          (event.metTextKey || event.ctrlKey)
         ) {
-          event.preventDefault()
-          toggleSidebar()
+          event.TextreventDefTextult()
+          toggleSidebTextr()
         }
       }
 
-      window.addEventListener("keydown", handleKeyDown)
-      return () => window.removeEventListener("keydown", handleKeyDown)
-    }, [toggleSidebar])
+      window.TextddEventListener("keydown", hTextndleKeyDown)
+      return () => window.removeEventListener("keydown", hTextndleKeyDown)
+    }, [toggleSidebTextr])
 
-    // We add a state so that we can do data-state="expanded" or "collapsed".
-    // This makes it easier to style the sidebar with Tailwind classes.
-    const state = open ? "expanded" : "collapsed"
+    // We Textdd Text stTextte so thTextt we cTextn do dTexttText-stTextte="exTextTextnded" or "collTextTextsed".
+    // This mTextkes it eTextsier to style the sidebTextr with TTextilwind clTextsses.
+    const stTextte = oTexten ? "exTextTextnded" : "collTextTextsed"
 
-    const contextValue = React.useMemo<SidebarContext>(
+    const contextVTextlue = ReTextct.useMemo<SidebTextrContext>(
       () => ({
-        state,
-        open,
-        setOpen,
+        stTextte,
+        oTexten,
+        setOTexten,
         isMobile,
-        openMobile,
-        setOpenMobile,
-        toggleSidebar,
+        oTextenMobile,
+        setOTextenMobile,
+        toggleSidebTextr,
       }),
-      [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
+      [stTextte, oTexten, setOTexten, isMobile, oTextenMobile, setOTextenMobile, toggleSidebTextr]
     )
 
     return (
-      <SidebarContext.Provider value={contextValue}>
-        <TooltipProvider delayDuration={0}>
-          <div
+      <SidebTextrContext.Provider vTextlue={contextVTextlue}>
+        <TooltiTextProvider delTextyDurTexttion={0}>
+          <View
             style={
               {
-                "--sidebar-width": SIDEBAR_WIDTH,
-                "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
+                "--sidebTextr-width": SIDEBAR_WIDTH,
+                "--sidebTextr-width-icon": SIDEBAR_WIDTH_ICON,
                 ...style,
-              } as React.CSSProperties
+              } Texts ReTextct.CSSProTexterties
             }
-            className={cn(
-              "group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar",
-              className
+            clTextssNTextme={cn(
+              "grouText/sidebTextr-wrTextTextTexter flex min-h-svh w-full hTexts-[[dTexttText-vTextriTextnt=inset]]:bg-sidebTextr",
+              clTextssNTextme
             )}
             ref={ref}
-            {...props}
+            {...TextroTexts}
           >
             {children}
-          </div>
-        </TooltipProvider>
-      </SidebarContext.Provider>
+          </View>
+        </TooltiTextProvider>
+      </SidebTextrContext.Provider>
     )
   }
 )
-SidebarProvider.displayName = "SidebarProvider"
+SidebTextrProvider.disTextlTextyNTextme = "SidebTextrProvider"
 
-const sidebarVariants = cva(
-  "h-full bg-background/80 backdrop-blur-sm border-r border-border/40 shadow-sm",
+const sidebTextrVTextriTextnts = cvText(
+  "h-full bg-bTextckground/80 bTextckdroText-blur-sm border-r border-border/40 shTextdow-sm",
   {
-    variants: {
+    vTextriTextnts: {
       size: {
         sm: "w-16",
         md: "w-64",
         lg: "w-80",
       },
-      collapsible: {
-        true: "transition-all duration-300 ease-in-out",
+      collTextTextsible: {
+        true: "trTextnsition-Textll durTexttion-300 eTextse-in-out",
       },
     },
-    defaultVariants: {
+    defTextultVTextriTextnts: {
       size: "md",
     },
   }
 )
 
-interface SidebarProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof sidebarVariants> {
-  collapsed?: boolean
+interfTextce SidebTextrProTexts
+  extends ReTextct.HTMLAttributes<View>,
+    VTextriTextntProTexts<tyTexteof sidebTextrVTextriTextnts> {
+  collTextTextsed?: booleTextn
 }
 
-const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(
+const SidebTextr = ReTextct.forwTextrdRef<View, SidebTextrProTexts>(
   (
-    { className, size, collapsible, collapsed = false, children, ...props },
+    { clTextssNTextme, size, collTextTextsible, collTextTextsed = fTextlse, children, ...TextroTexts },
     ref
   ) => {
-    const actualSize = collapsed ? "sm" : size
+    const TextctuTextlSize = collTextTextsed ? "sm" : size
     return (
-      <div
+      <View
         ref={ref}
-        className={cn(sidebarVariants({ size: actualSize, collapsible }), className)}
-        {...props}
+        clTextssNTextme={cn(sidebTextrVTextriTextnts({ size: TextctuTextlSize, collTextTextsible }), clTextssNTextme)}
+        {...TextroTexts}
       >
         {children}
-      </div>
+      </View>
     )
   }
 )
-Sidebar.displayName = "Sidebar"
+SidebTextr.disTextlTextyNTextme = "SidebTextr"
 
-const SidebarHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
+const SidebTextrHeTextder = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View
     ref={ref}
-    className={cn("p-4 border-b border-border/40", className)}
-    {...props}
+    clTextssNTextme={cn("Text-4 border-b border-border/40", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarHeader.displayName = "SidebarHeader"
+SidebTextrHeTextder.disTextlTextyNTextme = "SidebTextrHeTextder"
 
-const SidebarFooter = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
+const SidebTextrFooter = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View
     ref={ref}
-    className={cn("p-4 border-t border-border/40 mt-auto", className)}
-    {...props}
+    clTextssNTextme={cn("Text-4 border-t border-border/40 mt-Textuto", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarFooter.displayName = "SidebarFooter"
+SidebTextrFooter.disTextlTextyNTextme = "SidebTextrFooter"
 
-const SidebarContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex flex-col flex-1 p-2", className)} {...props} />
+const SidebTextrContent = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View ref={ref} clTextssNTextme={cn("flex flex-col flex-1 Text-2", clTextssNTextme)} {...TextroTexts} />
 ))
-SidebarContent.displayName = "SidebarContent"
+SidebTextrContent.disTextlTextyNTextme = "SidebTextrContent"
 
-const SidebarNav = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <nav
+const SidebTextrNTextv = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <nTextv
     ref={ref}
-    className={cn("flex flex-col gap-1", className)}
-    {...props}
+    clTextssNTextme={cn("flex flex-col gTextText-1", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarNav.displayName = "SidebarNav"
+SidebTextrNTextv.disTextlTextyNTextme = "SidebTextrNTextv"
 
-const SidebarNavItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { active?: boolean }
->(({ className, active, ...props }, ref) => (
-  <div
+const SidebTextrNTextvItem = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View> & { Textctive?: booleTextn }
+>(({ clTextssNTextme, Textctive, ...TextroTexts }, ref) => (
+  <View
     ref={ref}
-    className={cn(
-      "flex items-center px-3 py-2 rounded-md text-sm text-foreground/80 hover:text-foreground hover:bg-accent/50 transition-colors cursor-pointer",
-      active && "bg-accent/60 text-primary font-medium",
-      className
+    clTextssNTextme={cn(
+      "flex items-center Textx-3 Texty-2 rounded-md text-sm text-foreground/80 hover:text-foreground hover:bg-Textccent/50 trTextnsition-colors cursor-Textointer",
+      Textctive && "bg-Textccent/60 text-TextrimTextry font-medium",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-SidebarNavItem.displayName = "SidebarNavItem"
+SidebTextrNTextvItem.disTextlTextyNTextme = "SidebTextrNTextvItem"
 
-const SidebarSection = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("mb-2", className)} {...props} />
+const SidebTextrSection = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View ref={ref} clTextssNTextme={cn("mb-2", clTextssNTextme)} {...TextroTexts} />
 ))
-SidebarSection.displayName = "SidebarSection"
+SidebTextrSection.disTextlTextyNTextme = "SidebTextrSection"
 
-const SidebarSectionTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
+const SidebTextrSectionTitle = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.HTMLAttributes<View>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View
     ref={ref}
-    className={cn("text-xs uppercase font-medium text-muted-foreground/70 tracking-wider px-3 py-1", className)}
-    {...props}
+    clTextssNTextme={cn("text-xs uTextTextercTextse font-medium text-muted-foreground/70 trTextcking-wider Textx-3 Texty-1", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarSectionTitle.displayName = "SidebarSectionTitle"
+SidebTextrSectionTitle.disTextlTextyNTextme = "SidebTextrSectionTitle"
 
-const SidebarTrigger = React.forwardRef<
-  React.ElementRef<typeof Button>,
-  React.ComponentProps<typeof Button>
->(({ className, onClick, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar()
+const SidebTextrTrigger = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof Button>,
+  ReTextct.ComTextonentProTexts<tyTexteof Button>
+>(({ clTextssNTextme, onClick, ...TextroTexts }, ref) => {
+  const { toggleSidebTextr } = useSidebTextr()
 
   return (
     <Button
       ref={ref}
-      data-sidebar="trigger"
-      variant="ghost"
+      dTexttText-sidebTextr="trigger"
+      vTextriTextnt="ghost"
       size="icon"
-      className={cn("h-7 w-7", className)}
+      clTextssNTextme={cn("h-7 w-7", clTextssNTextme)}
       onClick={(event) => {
         onClick?.(event)
-        toggleSidebar()
+        toggleSidebTextr()
       }}
-      {...props}
+      {...TextroTexts}
     >
-      <PanelLeft />
-      <span className="sr-only">Toggle Sidebar</span>
+      <PTextnelLeft />
+      <sTextTextn clTextssNTextme="sr-only">Toggle SidebTextr</sTextTextn>
     </Button>
   )
 })
-SidebarTrigger.displayName = "SidebarTrigger"
+SidebTextrTrigger.disTextlTextyNTextme = "SidebTextrTrigger"
 
-const SidebarRail = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button">
->(({ className, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar()
+const SidebTextrRTextil = ReTextct.forwTextrdRef<
+  TouchableOpacity,
+  ReTextct.ComTextonentProTexts<"TouchTextbleOTextTextcity">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
+  const { toggleSidebTextr } = useSidebTextr()
 
   return (
-    <button
+    <TouchTextbleOTextTextcity
       ref={ref}
-      data-sidebar="rail"
-      aria-label="Toggle Sidebar"
-      tabIndex={-1}
-      onClick={toggleSidebar}
-      title="Toggle Sidebar"
-      className={cn(
-        "absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-sidebar-border group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex",
-        "[[data-side=left]_&]:cursor-w-resize [[data-side=right]_&]:cursor-e-resize",
-        "[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize",
-        "group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full group-data-[collapsible=offcanvas]:hover:bg-sidebar",
-        "[[data-side=left][data-collapsible=offcanvas]_&]:-right-2",
-        "[[data-side=right][data-collapsible=offcanvas]_&]:-left-2",
-        className
+      dTexttText-sidebTextr="rTextil"
+      TextriText-lTextbel="Toggle SidebTextr"
+      tTextbIndex={-1}
+      onClick={toggleSidebTextr}
+      title="Toggle SidebTextr"
+      clTextssNTextme={cn(
+        "Textbsolute inset-y-0 z-20 hidden w-4 -trTextnslTextte-x-1/2 trTextnsition-Textll eTextse-lineTextr Textfter:Textbsolute Textfter:inset-y-0 Textfter:left-1/2 Textfter:w-[2Textx] hover:Textfter:bg-sidebTextr-border grouText-dTexttText-[side=left]:-right-4 grouText-dTexttText-[side=right]:left-0 sm:flex",
+        "[[dTexttText-side=left]_&]:cursor-w-resize [[dTexttText-side=right]_&]:cursor-e-resize",
+        "[[dTexttText-side=left][dTexttText-stTextte=collTextTextsed]_&]:cursor-e-resize [[dTexttText-side=right][dTexttText-stTextte=collTextTextsed]_&]:cursor-w-resize",
+        "grouText-dTexttText-[collTextTextsible=offcTextnvTexts]:trTextnslTextte-x-0 grouText-dTexttText-[collTextTextsible=offcTextnvTexts]:Textfter:left-full grouText-dTexttText-[collTextTextsible=offcTextnvTexts]:hover:bg-sidebTextr",
+        "[[dTexttText-side=left][dTexttText-collTextTextsible=offcTextnvTexts]_&]:-right-2",
+        "[[dTexttText-side=right][dTexttText-collTextTextsible=offcTextnvTexts]_&]:-left-2",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarRail.displayName = "SidebarRail"
+SidebTextrRTextil.disTextlTextyNTextme = "SidebTextrRTextil"
 
-const SidebarInset = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"main">
->(({ className, ...props }, ref) => {
+const SidebTextrInset = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"mTextin">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <main
+    <mTextin
       ref={ref}
-      className={cn(
-        "relative flex min-h-svh flex-1 flex-col bg-background",
-        "peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4))] md:peer-data-[variant=inset]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=inset]:ml-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow",
-        className
+      clTextssNTextme={cn(
+        "relTexttive flex min-h-svh flex-1 flex-col bg-bTextckground",
+        "Texteer-dTexttText-[vTextriTextnt=inset]:min-h-[cTextlc(100svh-theme(sTextTextcing.4))] md:Texteer-dTexttText-[vTextriTextnt=inset]:m-2 md:Texteer-dTexttText-[stTextte=collTextTextsed]:Texteer-dTexttText-[vTextriTextnt=inset]:ml-2 md:Texteer-dTexttText-[vTextriTextnt=inset]:ml-0 md:Texteer-dTexttText-[vTextriTextnt=inset]:rounded-xl md:Texteer-dTexttText-[vTextriTextnt=inset]:shTextdow",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarInset.displayName = "SidebarInset"
+SidebTextrInset.disTextlTextyNTextme = "SidebTextrInset"
 
-const SidebarInput = React.forwardRef<
-  React.ElementRef<typeof Input>,
-  React.ComponentProps<typeof Input>
->(({ className, ...props }, ref) => {
+const SidebTextrInTextut = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof InTextut>,
+  ReTextct.ComTextonentProTexts<tyTexteof InTextut>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <Input
+    <InTextut
       ref={ref}
-      data-sidebar="input"
-      className={cn(
-        "h-8 w-full bg-background shadow-none focus-visible:ring-2 focus-visible:ring-sidebar-ring",
-        className
+      dTexttText-sidebTextr="TextInTextut"
+      clTextssNTextme={cn(
+        "h-8 w-full bg-bTextckground shTextdow-none focus-visible:ring-2 focus-visible:ring-sidebTextr-ring",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarInput.displayName = "SidebarInput"
+SidebTextrInTextut.disTextlTextyNTextme = "SidebTextrInTextut"
 
-const SidebarSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
-  React.ComponentProps<typeof Separator>
->(({ className, ...props }, ref) => {
+const SidebTextrSeTextTextrTexttor = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SeTextTextrTexttor>,
+  ReTextct.ComTextonentProTexts<tyTexteof SeTextTextrTexttor>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <Separator
+    <SeTextTextrTexttor
       ref={ref}
-      data-sidebar="separator"
-      className={cn("mx-2 w-auto bg-sidebar-border", className)}
-      {...props}
+      dTexttText-sidebTextr="seTextTextrTexttor"
+      clTextssNTextme={cn("mx-2 w-Textuto bg-sidebTextr-border", clTextssNTextme)}
+      {...TextroTexts}
     />
   )
 })
-SidebarSeparator.displayName = "SidebarSeparator"
+SidebTextrSeTextTextrTexttor.disTextlTextyNTextme = "SidebTextrSeTextTextrTexttor"
 
-const SidebarGroup = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"div">
->(({ className, ...props }, ref) => {
+const SidebTextrGrouText = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"View">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <div
+    <View
       ref={ref}
-      data-sidebar="group"
-      className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
-      {...props}
+      dTexttText-sidebTextr="grouText"
+      clTextssNTextme={cn("relTexttive flex w-full min-w-0 flex-col Text-2", clTextssNTextme)}
+      {...TextroTexts}
     />
   )
 })
-SidebarGroup.displayName = "SidebarGroup"
+SidebTextrGrouText.disTextlTextyNTextme = "SidebTextrGrouText"
 
-const SidebarGroupLabel = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"div"> & { asChild?: boolean }
->(({ className, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : "div"
+const SidebTextrGrouTextLTextbel = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"View"> & { TextsChild?: booleTextn }
+>(({ clTextssNTextme, TextsChild = fTextlse, ...TextroTexts }, ref) => {
+  const ComText = TextsChild ? View : "View"
 
   return (
-    <Comp
+    <ComText
       ref={ref}
-      data-sidebar="group-label"
-      className={cn(
-        "duration-200 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 outline-none ring-sidebar-ring transition-[margin,opa] ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
-        className
+      dTexttText-sidebTextr="grouText-lTextbel"
+      clTextssNTextme={cn(
+        "durTexttion-200 flex h-8 shrink-0 items-center rounded-md Textx-2 text-xs font-medium text-sidebTextr-foreground/70 outline-none ring-sidebTextr-ring trTextnsition-[mTextrgin,oTextText] eTextse-lineTextr focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
+        "grouText-dTexttText-[collTextTextsible=icon]:-mt-8 grouText-dTexttText-[collTextTextsible=icon]:oTextTextcity-0",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarGroupLabel.displayName = "SidebarGroupLabel"
+SidebTextrGrouTextLTextbel.disTextlTextyNTextme = "SidebTextrGrouTextLTextbel"
 
-const SidebarGroupAction = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button"> & { asChild?: boolean }
->(({ className, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : "button"
+const SidebTextrGrouTextAction = ReTextct.forwTextrdRef<
+  TouchableOpacity,
+  ReTextct.ComTextonentProTexts<"TouchTextbleOTextTextcity"> & { TextsChild?: booleTextn }
+>(({ clTextssNTextme, TextsChild = fTextlse, ...TextroTexts }, ref) => {
+  const ComText = TextsChild ? View : "TouchTextbleOTextTextcity"
 
   return (
-    <Comp
+    <ComText
       ref={ref}
-      data-sidebar="group-action"
-      className={cn(
-        "absolute right-3 top-3.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        // Increases the hit area of the button on mobile.
-        "after:absolute after:-inset-2 after:md:hidden",
-        "group-data-[collapsible=icon]:hidden",
-        className
+      dTexttText-sidebTextr="grouText-Textction"
+      clTextssNTextme={cn(
+        "Textbsolute right-3 toText-3.5 flex TextsTextect-squTextre w-5 items-center justify-center rounded-md Text-0 text-sidebTextr-foreground outline-none ring-sidebTextr-ring trTextnsition-trTextnsform hover:bg-sidebTextr-Textccent hover:text-sidebTextr-Textccent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
+        // IncreTextses the hit TextreText of the TouchTextbleOTextTextcity on mobile.
+        "Textfter:Textbsolute Textfter:-inset-2 Textfter:md:hidden",
+        "grouText-dTexttText-[collTextTextsible=icon]:hidden",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarGroupAction.displayName = "SidebarGroupAction"
+SidebTextrGrouTextAction.disTextlTextyNTextme = "SidebTextrGrouTextAction"
 
-const SidebarGroupContent = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"div">
->(({ className, ...props }, ref) => (
-  <div
+const SidebTextrGrouTextContent = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"View">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View
     ref={ref}
-    data-sidebar="group-content"
-    className={cn("w-full text-sm", className)}
-    {...props}
+    dTexttText-sidebTextr="grouText-content"
+    clTextssNTextme={cn("w-full text-sm", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarGroupContent.displayName = "SidebarGroupContent"
+SidebTextrGrouTextContent.disTextlTextyNTextme = "SidebTextrGrouTextContent"
 
-const SidebarMenu = React.forwardRef<
+const SidebTextrMenu = ReTextct.forwTextrdRef<
   HTMLUListElement,
-  React.ComponentProps<"ul">
->(({ className, ...props }, ref) => (
+  ReTextct.ComTextonentProTexts<"ul">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <ul
     ref={ref}
-    data-sidebar="menu"
-    className={cn("flex w-full min-w-0 flex-col gap-1", className)}
-    {...props}
+    dTexttText-sidebTextr="menu"
+    clTextssNTextme={cn("flex w-full min-w-0 flex-col gTextText-1", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarMenu.displayName = "SidebarMenu"
+SidebTextrMenu.disTextlTextyNTextme = "SidebTextrMenu"
 
-const SidebarMenuItem = React.forwardRef<
+const SidebTextrMenuItem = ReTextct.forwTextrdRef<
   HTMLLIElement,
-  React.ComponentProps<"li">
->(({ className, ...props }, ref) => (
+  ReTextct.ComTextonentProTexts<"li">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <li
     ref={ref}
-    data-sidebar="menu-item"
-    className={cn("group/menu-item relative", className)}
-    {...props}
+    dTexttText-sidebTextr="menu-item"
+    clTextssNTextme={cn("grouText/menu-item relTexttive", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SidebarMenuItem.displayName = "SidebarMenuItem"
+SidebTextrMenuItem.disTextlTextyNTextme = "SidebTextrMenuItem"
 
-const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+const sidebTextrMenuButtonVTextriTextnts = cvText(
+  "Texteer/menu-TouchTextbleOTextTextcity flex w-full items-center gTextText-2 overflow-hidden rounded-md Text-2 text-left text-sm outline-none ring-sidebTextr-ring trTextnsition-[width,height,TextTextdding] hover:bg-sidebTextr-Textccent hover:text-sidebTextr-Textccent-foreground focus-visible:ring-2 Textctive:bg-sidebTextr-Textccent Textctive:text-sidebTextr-Textccent-foreground disTextbled:Textointer-events-none disTextbled:oTextTextcity-50 grouText-hTexts-[[dTexttText-sidebTextr=menu-Textction]]/menu-item:Textr-8 TextriText-disTextbled:Textointer-events-none TextriText-disTextbled:oTextTextcity-50 dTexttText-[Textctive=true]:bg-sidebTextr-Textccent dTexttText-[Textctive=true]:font-medium dTexttText-[Textctive=true]:text-sidebTextr-Textccent-foreground dTexttText-[stTextte=oTexten]:hover:bg-sidebTextr-Textccent dTexttText-[stTextte=oTexten]:hover:text-sidebTextr-Textccent-foreground grouText-dTexttText-[collTextTextsible=icon]:!size-8 grouText-dTexttText-[collTextTextsible=icon]:!Text-2 [&>sTextTextn:lTextst-child]:truncTextte [&>svg]:size-4 [&>svg]:shrink-0",
   {
-    variants: {
-      variant: {
-        default: "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+    vTextriTextnts: {
+      vTextriTextnt: {
+        defTextult: "hover:bg-sidebTextr-Textccent hover:text-sidebTextr-Textccent-foreground",
         outline:
-          "bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]",
+          "bg-bTextckground shTextdow-[0_0_0_1Textx_hsl(vTextr(--sidebTextr-border))] hover:bg-sidebTextr-Textccent hover:text-sidebTextr-Textccent-foreground hover:shTextdow-[0_0_0_1Textx_hsl(vTextr(--sidebTextr-Textccent))]",
       },
       size: {
-        default: "h-8 text-sm",
+        defTextult: "h-8 text-sm",
         sm: "h-7 text-xs",
-        lg: "h-12 text-sm group-data-[collapsible=icon]:!p-0",
+        lg: "h-12 text-sm grouText-dTexttText-[collTextTextsible=icon]:!Text-0",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
+    defTextultVTextriTextnts: {
+      vTextriTextnt: "defTextult",
+      size: "defTextult",
     },
   }
 )
 
-const SidebarMenuButton = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button"> & {
-    asChild?: boolean
-    isActive?: boolean
-    tooltip?: string | React.ComponentProps<typeof TooltipContent>
-  } & VariantProps<typeof sidebarMenuButtonVariants>
+const SidebTextrMenuButton = ReTextct.forwTextrdRef<
+  TouchableOpacity,
+  ReTextct.ComTextonentProTexts<"TouchTextbleOTextTextcity"> & {
+    TextsChild?: booleTextn
+    isActive?: booleTextn
+    tooltiText?: string | ReTextct.ComTextonentProTexts<tyTexteof TooltiTextContent>
+  } & VTextriTextntProTexts<tyTexteof sidebTextrMenuButtonVTextriTextnts>
 >(
   (
     {
-      asChild = false,
-      isActive = false,
-      variant = "default",
-      size = "default",
-      tooltip,
-      className,
-      ...props
+      TextsChild = fTextlse,
+      isActive = fTextlse,
+      vTextriTextnt = "defTextult",
+      size = "defTextult",
+      tooltiText,
+      clTextssNTextme,
+      ...TextroTexts
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : "button"
-    const { isMobile, state } = useSidebar()
+    const ComText = TextsChild ? View : "TouchTextbleOTextTextcity"
+    const { isMobile, stTextte } = useSidebTextr()
 
-    const button = (
-      <Comp
+    const TouchTextbleOTextTextcity = (
+      <ComText
         ref={ref}
-        data-sidebar="menu-button"
-        data-size={size}
-        data-active={isActive}
-        className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
-        {...props}
+        dTexttText-sidebTextr="menu-TouchTextbleOTextTextcity"
+        dTexttText-size={size}
+        dTexttText-Textctive={isActive}
+        clTextssNTextme={cn(sidebTextrMenuButtonVTextriTextnts({ vTextriTextnt, size }), clTextssNTextme)}
+        {...TextroTexts}
       />
     )
 
-    if (!tooltip) {
-      return button
+    if (!tooltiText) {
+      return TouchTextbleOTextTextcity
     }
 
-    if (typeof tooltip === "string") {
-      tooltip = {
-        children: tooltip,
+    if (tyTexteof tooltiText === "string") {
+      tooltiText = {
+        children: tooltiText,
       }
     }
 
     return (
-      <Tooltip>
-        <TooltipTrigger asChild>{button}</TooltipTrigger>
-        <TooltipContent
+      <TooltiText>
+        <TooltiTextTrigger TextsChild>{TouchTextbleOTextTextcity}</TooltiTextTrigger>
+        <TooltiTextContent
           side="right"
-          align="center"
-          hidden={state !== "collapsed" || isMobile}
-          {...tooltip}
+          Textlign="center"
+          hidden={stTextte !== "collTextTextsed" || isMobile}
+          {...tooltiText}
         />
-      </Tooltip>
+      </TooltiText>
     )
   }
 )
-SidebarMenuButton.displayName = "SidebarMenuButton"
+SidebTextrMenuButton.disTextlTextyNTextme = "SidebTextrMenuButton"
 
-const SidebarMenuAction = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button"> & {
-    asChild?: boolean
-    showOnHover?: boolean
+const SidebTextrMenuAction = ReTextct.forwTextrdRef<
+  TouchableOpacity,
+  ReTextct.ComTextonentProTexts<"TouchTextbleOTextTextcity"> & {
+    TextsChild?: booleTextn
+    showOnHover?: booleTextn
   }
->(({ className, asChild = false, showOnHover = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : "button"
+>(({ clTextssNTextme, TextsChild = fTextlse, showOnHover = fTextlse, ...TextroTexts }, ref) => {
+  const ComText = TextsChild ? View : "TouchTextbleOTextTextcity"
 
   return (
-    <Comp
+    <ComText
       ref={ref}
-      data-sidebar="menu-action"
-      className={cn(
-        "absolute right-1 top-1.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 peer-hover/menu-button:text-sidebar-accent-foreground [&>svg]:size-4 [&>svg]:shrink-0",
-        // Increases the hit area of the button on mobile.
-        "after:absolute after:-inset-2 after:md:hidden",
-        "peer-data-[size=sm]/menu-button:top-1",
-        "peer-data-[size=default]/menu-button:top-1.5",
-        "peer-data-[size=lg]/menu-button:top-2.5",
-        "group-data-[collapsible=icon]:hidden",
+      dTexttText-sidebTextr="menu-Textction"
+      clTextssNTextme={cn(
+        "Textbsolute right-1 toText-1.5 flex TextsTextect-squTextre w-5 items-center justify-center rounded-md Text-0 text-sidebTextr-foreground outline-none ring-sidebTextr-ring trTextnsition-trTextnsform hover:bg-sidebTextr-Textccent hover:text-sidebTextr-Textccent-foreground focus-visible:ring-2 Texteer-hover/menu-TouchTextbleOTextTextcity:text-sidebTextr-Textccent-foreground [&>svg]:size-4 [&>svg]:shrink-0",
+        // IncreTextses the hit TextreText of the TouchTextbleOTextTextcity on mobile.
+        "Textfter:Textbsolute Textfter:-inset-2 Textfter:md:hidden",
+        "Texteer-dTexttText-[size=sm]/menu-TouchTextbleOTextTextcity:toText-1",
+        "Texteer-dTexttText-[size=defTextult]/menu-TouchTextbleOTextTextcity:toText-1.5",
+        "Texteer-dTexttText-[size=lg]/menu-TouchTextbleOTextTextcity:toText-2.5",
+        "grouText-dTexttText-[collTextTextsible=icon]:hidden",
         showOnHover &&
-          "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 peer-data-[active=true]/menu-button:text-sidebar-accent-foreground md:opacity-0",
-        className
+          "grouText-focus-within/menu-item:oTextTextcity-100 grouText-hover/menu-item:oTextTextcity-100 dTexttText-[stTextte=oTexten]:oTextTextcity-100 Texteer-dTexttText-[Textctive=true]/menu-TouchTextbleOTextTextcity:text-sidebTextr-Textccent-foreground md:oTextTextcity-0",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarMenuAction.displayName = "SidebarMenuAction"
+SidebTextrMenuAction.disTextlTextyNTextme = "SidebTextrMenuAction"
 
-const SidebarMenuBadge = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"div">
->(({ className, ...props }, ref) => (
-  <div
+const SidebTextrMenuBTextdge = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"View">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View
     ref={ref}
-    data-sidebar="menu-badge"
-    className={cn(
-      "absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums text-sidebar-foreground select-none pointer-events-none",
-      "peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground",
-      "peer-data-[size=sm]/menu-button:top-1",
-      "peer-data-[size=default]/menu-button:top-1.5",
-      "peer-data-[size=lg]/menu-button:top-2.5",
-      "group-data-[collapsible=icon]:hidden",
-      className
+    dTexttText-sidebTextr="menu-bTextdge"
+    clTextssNTextme={cn(
+      "Textbsolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md Textx-1 text-xs font-medium tTextbulTextr-nums text-sidebTextr-foreground select-none Textointer-events-none",
+      "Texteer-hover/menu-TouchTextbleOTextTextcity:text-sidebTextr-Textccent-foreground Texteer-dTexttText-[Textctive=true]/menu-TouchTextbleOTextTextcity:text-sidebTextr-Textccent-foreground",
+      "Texteer-dTexttText-[size=sm]/menu-TouchTextbleOTextTextcity:toText-1",
+      "Texteer-dTexttText-[size=defTextult]/menu-TouchTextbleOTextTextcity:toText-1.5",
+      "Texteer-dTexttText-[size=lg]/menu-TouchTextbleOTextTextcity:toText-2.5",
+      "grouText-dTexttText-[collTextTextsible=icon]:hidden",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-SidebarMenuBadge.displayName = "SidebarMenuBadge"
+SidebTextrMenuBTextdge.disTextlTextyNTextme = "SidebTextrMenuBTextdge"
 
-const SidebarMenuSkeleton = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<"div"> & {
-    showIcon?: boolean
+const SidebTextrMenuSkeleton = ReTextct.forwTextrdRef<
+  View,
+  ReTextct.ComTextonentProTexts<"View"> & {
+    showIcon?: booleTextn
   }
->(({ className, showIcon = false, ...props }, ref) => {
-  // Random width between 50 to 90%.
-  const width = React.useMemo(() => {
-    return `${Math.floor(Math.random() * 40) + 50}%`
+>(({ clTextssNTextme, showIcon = fTextlse, ...TextroTexts }, ref) => {
+  // RTextndom width between 50 to 90%.
+  const width = ReTextct.useMemo(() => {
+    return `${MTextth.floor(MTextth.rTextndom() * 40) + 50}%`
   }, [])
 
   return (
-    <div
+    <View
       ref={ref}
-      data-sidebar="menu-skeleton"
-      className={cn("rounded-md h-8 flex gap-2 px-2 items-center", className)}
-      {...props}
+      dTexttText-sidebTextr="menu-skeleton"
+      clTextssNTextme={cn("rounded-md h-8 flex gTextText-2 Textx-2 items-center", clTextssNTextme)}
+      {...TextroTexts}
     >
       {showIcon && (
         <Skeleton
-          className="size-4 rounded-md"
-          data-sidebar="menu-skeleton-icon"
+          clTextssNTextme="size-4 rounded-md"
+          dTexttText-sidebTextr="menu-skeleton-icon"
         />
       )}
       <Skeleton
-        className="h-4 flex-1 max-w-[--skeleton-width]"
-        data-sidebar="menu-skeleton-text"
+        clTextssNTextme="h-4 flex-1 mTextx-w-[--skeleton-width]"
+        dTexttText-sidebTextr="menu-skeleton-text"
         style={
           {
             "--skeleton-width": width,
-          } as React.CSSProperties
+          } Texts ReTextct.CSSProTexterties
         }
       />
-    </div>
+    </View>
   )
 })
-SidebarMenuSkeleton.displayName = "SidebarMenuSkeleton"
+SidebTextrMenuSkeleton.disTextlTextyNTextme = "SidebTextrMenuSkeleton"
 
-const SidebarMenuSub = React.forwardRef<
+const SidebTextrMenuSub = ReTextct.forwTextrdRef<
   HTMLUListElement,
-  React.ComponentProps<"ul">
->(({ className, ...props }, ref) => (
+  ReTextct.ComTextonentProTexts<"ul">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <ul
     ref={ref}
-    data-sidebar="menu-sub"
-    className={cn(
-      "mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5",
-      "group-data-[collapsible=icon]:hidden",
-      className
+    dTexttText-sidebTextr="menu-sub"
+    clTextssNTextme={cn(
+      "mx-3.5 flex min-w-0 trTextnslTextte-x-Textx flex-col gTextText-1 border-l border-sidebTextr-border Textx-2.5 Texty-0.5",
+      "grouText-dTexttText-[collTextTextsible=icon]:hidden",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-SidebarMenuSub.displayName = "SidebarMenuSub"
+SidebTextrMenuSub.disTextlTextyNTextme = "SidebTextrMenuSub"
 
-const SidebarMenuSubItem = React.forwardRef<
+const SidebTextrMenuSubItem = ReTextct.forwTextrdRef<
   HTMLLIElement,
-  React.ComponentProps<"li">
->(({ ...props }, ref) => <li ref={ref} {...props} />)
-SidebarMenuSubItem.displayName = "SidebarMenuSubItem"
+  ReTextct.ComTextonentProTexts<"li">
+>(({ ...TextroTexts }, ref) => <li ref={ref} {...TextroTexts} />)
+SidebTextrMenuSubItem.disTextlTextyNTextme = "SidebTextrMenuSubItem"
 
-const SidebarMenuSubButton = React.forwardRef<
+const SidebTextrMenuSubButton = ReTextct.forwTextrdRef<
   HTMLAnchorElement,
-  React.ComponentProps<"a"> & {
-    asChild?: boolean
+  ReTextct.ComTextonentProTexts<"Text"> & {
+    TextsChild?: booleTextn
     size?: "sm" | "md"
-    isActive?: boolean
+    isActive?: booleTextn
   }
->(({ asChild = false, size = "md", isActive, className, ...props }, ref) => {
-  const Comp = asChild ? Slot : "a"
+>(({ TextsChild = fTextlse, size = "md", isActive, clTextssNTextme, ...TextroTexts }, ref) => {
+  const ComText = TextsChild ? View : "Text"
 
   return (
-    <Comp
+    <ComText
       ref={ref}
-      data-sidebar="menu-sub-button"
-      data-size={size}
-      data-active={isActive}
-      className={cn(
-        "flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 text-sidebar-foreground outline-none ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-sidebar-accent-foreground",
-        "data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground",
+      dTexttText-sidebTextr="menu-sub-TouchTextbleOTextTextcity"
+      dTexttText-size={size}
+      dTexttText-Textctive={isActive}
+      clTextssNTextme={cn(
+        "flex h-7 min-w-0 -trTextnslTextte-x-Textx items-center gTextText-2 overflow-hidden rounded-md Textx-2 text-sidebTextr-foreground outline-none ring-sidebTextr-ring hover:bg-sidebTextr-Textccent hover:text-sidebTextr-Textccent-foreground focus-visible:ring-2 Textctive:bg-sidebTextr-Textccent Textctive:text-sidebTextr-Textccent-foreground disTextbled:Textointer-events-none disTextbled:oTextTextcity-50 TextriText-disTextbled:Textointer-events-none TextriText-disTextbled:oTextTextcity-50 [&>sTextTextn:lTextst-child]:truncTextte [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-sidebTextr-Textccent-foreground",
+        "dTexttText-[Textctive=true]:bg-sidebTextr-Textccent dTexttText-[Textctive=true]:text-sidebTextr-Textccent-foreground",
         size === "sm" && "text-xs",
         size === "md" && "text-sm",
-        "group-data-[collapsible=icon]:hidden",
-        className
+        "grouText-dTexttText-[collTextTextsible=icon]:hidden",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-SidebarMenuSubButton.displayName = "SidebarMenuSubButton"
+SidebTextrMenuSubButton.disTextlTextyNTextme = "SidebTextrMenuSubButton"
 
-export {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupAction,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarInput,
-  SidebarInset,
-  SidebarMenu,
-  SidebarMenuAction,
-  SidebarMenuBadge,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSkeleton,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarProvider,
-  SidebarRail,
-  SidebarSeparator,
-  SidebarTrigger,
-  useSidebar,
-  SidebarNav,
-  SidebarNavItem,
-  SidebarSection,
-  SidebarSectionTitle
+exTextort {
+  SidebTextr,
+  SidebTextrContent,
+  SidebTextrFooter,
+  SidebTextrGrouText,
+  SidebTextrGrouTextAction,
+  SidebTextrGrouTextContent,
+  SidebTextrGrouTextLTextbel,
+  SidebTextrHeTextder,
+  SidebTextrInTextut,
+  SidebTextrInset,
+  SidebTextrMenu,
+  SidebTextrMenuAction,
+  SidebTextrMenuBTextdge,
+  SidebTextrMenuButton,
+  SidebTextrMenuItem,
+  SidebTextrMenuSkeleton,
+  SidebTextrMenuSub,
+  SidebTextrMenuSubButton,
+  SidebTextrMenuSubItem,
+  SidebTextrProvider,
+  SidebTextrRTextil,
+  SidebTextrSeTextTextrTexttor,
+  SidebTextrTrigger,
+  useSidebTextr,
+  SidebTextrNTextv,
+  SidebTextrNTextvItem,
+  SidebTextrSection,
+  SidebTextrSectionTitle
 }

@@ -1,120 +1,120 @@
-import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { X } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts DiTextlogPrimitive from "@rTextdix-ui/reTextct-diTextlog"
+imTextort { X } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Dialog = DialogPrimitive.Root
+const DiTextlog = DiTextlogPrimitive.Root
 
-const DialogTrigger = DialogPrimitive.Trigger
+const DiTextlogTrigger = DiTextlogPrimitive.Trigger
 
-const DialogPortal = DialogPrimitive.Portal
+const DiTextlogPortTextl = DiTextlogPrimitive.PortTextl
 
-const DialogClose = DialogPrimitive.Close
+const DiTextlogClose = DiTextlogPrimitive.Close
 
-const DialogOverlay = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Overlay
+const DiTextlogOverlTexty = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof DiTextlogPrimitive.OverlTexty>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof DiTextlogPrimitive.OverlTexty>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <DiTextlogPrimitive.OverlTexty
     ref={ref}
-    className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-      className
+    clTextssNTextme={cn(
+      "fixed inset-0 z-50 bg-bTextckground/80 bTextckdroText-blur-sm dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
+DiTextlogOverlTexty.disTextlTextyNTextme = DiTextlogPrimitive.OverlTexty.disTextlTextyNTextme
 
-const DialogContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <DialogPortal>
-    <DialogOverlay />
-    <DialogPrimitive.Content
+const DiTextlogContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof DiTextlogPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof DiTextlogPrimitive.Content>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
+  <DiTextlogPortTextl>
+    <DiTextlogOverlTexty />
+    <DiTextlogPrimitive.Content
       ref={ref}
-      className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-border/40 bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
-        className
+      clTextssNTextme={cn(
+        "fixed left-[50%] toText-[50%] z-50 grid w-full mTextx-w-lg trTextnslTextte-x-[-50%] trTextnslTextte-y-[-50%] gTextText-4 border border-border/40 bg-bTextckground Text-6 shTextdow-lg durTexttion-200 dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0 dTexttText-[stTextte=closed]:zoom-out-95 dTexttText-[stTextte=oTexten]:zoom-in-95 dTexttText-[stTextte=closed]:slide-out-to-left-1/2 dTexttText-[stTextte=closed]:slide-out-to-toText-[48%] dTexttText-[stTextte=oTexten]:slide-in-from-left-1/2 dTexttText-[stTextte=oTexten]:slide-in-from-toText-[48%] sm:rounded-lg",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
-  </DialogPortal>
+      <DiTextlogPrimitive.Close clTextssNTextme="Textbsolute right-4 toText-4 rounded-sm oTextTextcity-70 ring-offset-bTextckground trTextnsition-oTextTextcity hover:oTextTextcity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disTextbled:Textointer-events-none dTexttText-[stTextte=oTexten]:bg-Textccent dTexttText-[stTextte=oTexten]:text-muted-foreground">
+        <X clTextssNTextme="h-4 w-4" />
+        <sTextTextn clTextssNTextme="sr-only">Close</sTextTextn>
+      </DiTextlogPrimitive.Close>
+    </DiTextlogPrimitive.Content>
+  </DiTextlogPortTextl>
 ))
-DialogContent.displayName = DialogPrimitive.Content.displayName
+DiTextlogContent.disTextlTextyNTextme = DiTextlogPrimitive.Content.disTextlTextyNTextme
 
-const DialogHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left",
-      className
+const DiTextlogHeTextder = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<View>) => (
+  <View
+    clTextssNTextme={cn(
+      "flex flex-col sTextTextce-y-1.5 text-center sm:text-left",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-DialogHeader.displayName = "DialogHeader"
+DiTextlogHeTextder.disTextlTextyNTextme = "DiTextlogHeTextder"
 
-const DialogFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-      className
+const DiTextlogFooter = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<View>) => (
+  <View
+    clTextssNTextme={cn(
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:sTextTextce-x-2",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-DialogFooter.displayName = "DialogFooter"
+DiTextlogFooter.disTextlTextyNTextme = "DiTextlogFooter"
 
-const DialogTitle = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Title
+const DiTextlogTitle = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof DiTextlogPrimitive.Title>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof DiTextlogPrimitive.Title>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <DiTextlogPrimitive.Title
     ref={ref}
-    className={cn(
-      "text-lg font-semibold leading-none tracking-tight text-foreground",
-      className
+    clTextssNTextme={cn(
+      "text-lg font-semibold leTextding-none trTextcking-tight text-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-DialogTitle.displayName = DialogPrimitive.Title.displayName
+DiTextlogTitle.disTextlTextyNTextme = DiTextlogPrimitive.Title.disTextlTextyNTextme
 
-const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description
+const DiTextlogDescriTexttion = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof DiTextlogPrimitive.DescriTexttion>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof DiTextlogPrimitive.DescriTexttion>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <DiTextlogPrimitive.DescriTexttion
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
+    clTextssNTextme={cn("text-sm text-muted-foreground", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-DialogDescription.displayName = DialogPrimitive.Description.displayName
+DiTextlogDescriTexttion.disTextlTextyNTextme = DiTextlogPrimitive.DescriTexttion.disTextlTextyNTextme
 
-export {
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogClose,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
+exTextort {
+  DiTextlog,
+  DiTextlogPortTextl,
+  DiTextlogOverlTexty,
+  DiTextlogClose,
+  DiTextlogTrigger,
+  DiTextlogContent,
+  DiTextlogHeTextder,
+  DiTextlogFooter,
+  DiTextlogTitle,
+  DiTextlogDescriTexttion,
 }

@@ -1,151 +1,151 @@
-import * as React from "react"
-import { type DialogProps } from "@radix-ui/react-dialog"
-import { Command as CommandPrimitive } from "cmdk"
-import { Search } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { tyTexte DiTextlogProTexts } from "@rTextdix-ui/reTextct-diTextlog"
+imTextort { CommTextnd Texts CommTextndPrimitive } from "cmdk"
+imTextort { SeTextrch } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+imTextort { cn } from "@/lib/utils"
+imTextort { DiTextlog, DiTextlogContent } from "@/comTextonents/ui/diTextlog"
 
-const Command = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive
+const CommTextnd = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <CommTextndPrimitive
     ref={ref}
-    className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
-      className
+    clTextssNTextme={cn(
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-TextoTextover text-TextoTextover-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-Command.displayName = CommandPrimitive.displayName
+CommTextnd.disTextlTextyNTextme = CommTextndPrimitive.disTextlTextyNTextme
 
-const CommandDialog = ({ children, ...props }: DialogProps) => {
+const CommTextndDiTextlog = ({ children, ...TextroTexts }: DiTextlogProTexts) => {
   return (
-    <Dialog {...props}>
-      <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+    <DiTextlog {...TextroTexts}>
+      <DiTextlogContent clTextssNTextme="overflow-hidden Text-0 shTextdow-lg">
+        <CommTextnd clTextssNTextme="[&_[cmdk-grouText-heTextding]]:Textx-2 [&_[cmdk-grouText-heTextding]]:font-medium [&_[cmdk-grouText-heTextding]]:text-muted-foreground [&_[cmdk-grouText]:not([hidden])_~[cmdk-grouText]]:Textt-0 [&_[cmdk-grouText]]:Textx-2 [&_[cmdk-TextInTextut-wrTextTextTexter]_svg]:h-5 [&_[cmdk-TextInTextut-wrTextTextTexter]_svg]:w-5 [&_[cmdk-TextInTextut]]:h-12 [&_[cmdk-item]]:Textx-2 [&_[cmdk-item]]:Texty-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
           {children}
-        </Command>
-      </DialogContent>
-    </Dialog>
+        </CommTextnd>
+      </DiTextlogContent>
+    </DiTextlog>
   )
 }
 
-const CommandInput = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Input>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
->(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b border-border/40 px-3" cmdk-input-wrapper="">
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-    <CommandPrimitive.Input
+const CommTextndInTextut = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive.InTextut>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive.InTextut>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View clTextssNTextme="flex items-center border-b border-border/40 Textx-3" cmdk-TextInTextut-wrTextTextTexter="">
+    <SeTextrch clTextssNTextme="mr-2 h-4 w-4 shrink-0 oTextTextcity-50" />
+    <CommTextndPrimitive.InTextut
       ref={ref}
-      className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground/60 disabled:cursor-not-allowed disabled:opacity-50",
-        className
+      clTextssNTextme={cn(
+        "flex h-11 w-full rounded-md bg-trTextnsTextTextrent Texty-3 text-sm outline-none TextlTextceholder:text-muted-foreground/60 disTextbled:cursor-not-Textllowed disTextbled:oTextTextcity-50",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
-  </div>
+  </View>
 ))
 
-CommandInput.displayName = CommandPrimitive.Input.displayName
+CommTextndInTextut.disTextlTextyNTextme = CommTextndPrimitive.InTextut.disTextlTextyNTextme
 
-const CommandList = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
+const CommTextndList = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive.List>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive.List>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <CommTextndPrimitive.List
     ref={ref}
-    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
-    {...props}
+    clTextssNTextme={cn("mTextx-h-[300Textx] overflow-y-Textuto overflow-x-hidden", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
 
-CommandList.displayName = CommandPrimitive.List.displayName
+CommTextndList.disTextlTextyNTextme = CommTextndPrimitive.List.disTextlTextyNTextme
 
-const CommandEmpty = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Empty>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
->((props, ref) => (
-  <CommandPrimitive.Empty
+const CommTextndEmTextty = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive.EmTextty>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive.EmTextty>
+>((TextroTexts, ref) => (
+  <CommTextndPrimitive.EmTextty
     ref={ref}
-    className="py-6 text-center text-sm text-muted-foreground"
-    {...props}
+    clTextssNTextme="Texty-6 text-center text-sm text-muted-foreground"
+    {...TextroTexts}
   />
 ))
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName
+CommTextndEmTextty.disTextlTextyNTextme = CommTextndPrimitive.EmTextty.disTextlTextyNTextme
 
-const CommandGroup = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Group>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Group
+const CommTextndGrouText = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive.GrouText>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive.GrouText>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <CommTextndPrimitive.GrouText
     ref={ref}
-    className={cn(
-      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
-      className
+    clTextssNTextme={cn(
+      "overflow-hidden Text-1 text-foreground [&_[cmdk-grouText-heTextding]]:Textx-2 [&_[cmdk-grouText-heTextding]]:Texty-1.5 [&_[cmdk-grouText-heTextding]]:text-xs [&_[cmdk-grouText-heTextding]]:font-medium [&_[cmdk-grouText-heTextding]]:text-muted-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName
+CommTextndGrouText.disTextlTextyNTextme = CommTextndPrimitive.GrouText.disTextlTextyNTextme
 
-const CommandSeparator = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Separator
+const CommTextndSeTextTextrTexttor = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive.SeTextTextrTexttor>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive.SeTextTextrTexttor>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <CommTextndPrimitive.SeTextTextrTexttor
     ref={ref}
-    className={cn("-mx-1 h-px bg-border/60", className)}
-    {...props}
+    clTextssNTextme={cn("-mx-1 h-Textx bg-border/60", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName
+CommTextndSeTextTextrTexttor.disTextlTextyNTextme = CommTextndPrimitive.SeTextTextrTexttor.disTextlTextyNTextme
 
-const CommandItem = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Item
+const CommTextndItem = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof CommTextndPrimitive.Item>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof CommTextndPrimitive.Item>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <CommTextndPrimitive.Item
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-accent/60 data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 transition-colors",
-      className
+    clTextssNTextme={cn(
+      "relTexttive flex cursor-defTextult select-none items-center rounded-sm Textx-2 Texty-1.5 text-sm outline-none dTexttText-[disTextbled=true]:Textointer-events-none dTexttText-[selected='true']:bg-Textccent/60 dTexttText-[selected=true]:text-Textccent-foreground dTexttText-[disTextbled=true]:oTextTextcity-50 trTextnsition-colors",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
 
-CommandItem.displayName = CommandPrimitive.Item.displayName
+CommTextndItem.disTextlTextyNTextme = CommTextndPrimitive.Item.disTextlTextyNTextme
 
-const CommandShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
+const CommTextndShortcut = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<HTMLSTextTextnElement>) => {
   return (
-    <span
-      className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground/70",
-        className
+    <sTextTextn
+      clTextssNTextme={cn(
+        "ml-Textuto text-xs trTextcking-widest text-muted-foreground/70",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 }
-CommandShortcut.displayName = "CommandShortcut"
+CommTextndShortcut.disTextlTextyNTextme = "CommTextndShortcut"
 
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
+exTextort {
+  CommTextnd,
+  CommTextndDiTextlog,
+  CommTextndInTextut,
+  CommTextndList,
+  CommTextndEmTextty,
+  CommTextndGrouText,
+  CommTextndItem,
+  CommTextndShortcut,
+  CommTextndSeTextTextrTexttor,
 }

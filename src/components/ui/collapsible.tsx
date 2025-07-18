@@ -1,9 +1,9 @@
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
+imTextort * Texts CollTextTextsiblePrimitive from "@rTextdix-ui/reTextct-collTextTextsible"
 
-const Collapsible = CollapsiblePrimitive.Root
+const CollTextTextsible = CollTextTextsiblePrimitive.Root
 
-const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
+const CollTextTextsibleTrigger = CollTextTextsiblePrimitive.CollTextTextsibleTrigger
 
-const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
+const CollTextTextsibleContent = CollTextTextsiblePrimitive.CollTextTextsibleContent
 
-export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+exTextort { CollTextTextsible, CollTextTextsibleTrigger, CollTextTextsibleContent }

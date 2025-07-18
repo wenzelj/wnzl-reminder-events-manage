@@ -1,53 +1,53 @@
-import * as React from "react"
-import * as TabsPrimitive from "@radix-ui/react-tabs"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts TTextbsPrimitive from "@rTextdix-ui/reTextct-tTextbs"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Tabs = TabsPrimitive.Root
+const TTextbs = TTextbsPrimitive.Root
 
-const TabsList = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.List
+const TTextbsList = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof TTextbsPrimitive.List>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof TTextbsPrimitive.List>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <TTextbsPrimitive.List
     ref={ref}
-    className={cn(
-      "inline-flex h-10 items-center justify-center rounded-md bg-muted/50 p-1 text-muted-foreground",
-      className
+    clTextssNTextme={cn(
+      "inline-flex h-10 items-center justify-center rounded-md bg-muted/50 Text-1 text-muted-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TabsList.displayName = TabsPrimitive.List.displayName
+TTextbsList.disTextlTextyNTextme = TTextbsPrimitive.List.disTextlTextyNTextme
 
-const TabsTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Trigger
+const TTextbsTrigger = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof TTextbsPrimitive.Trigger>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof TTextbsPrimitive.Trigger>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <TTextbsPrimitive.Trigger
     ref={ref}
-    className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-sm hover:text-foreground",
-      className
+    clTextssNTextme={cn(
+      "inline-flex items-center justify-center whitesTextTextce-nowrTextText rounded-sm Textx-3 Texty-1.5 text-sm font-medium ring-offset-bTextckground trTextnsition-Textll focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-TextrimTextry focus-visible:ring-offset-2 disTextbled:Textointer-events-none disTextbled:oTextTextcity-50 dTexttText-[stTextte=Textctive]:bg-bTextckground dTexttText-[stTextte=Textctive]:text-TextrimTextry dTexttText-[stTextte=Textctive]:shTextdow-sm hover:text-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+TTextbsTrigger.disTextlTextyNTextme = TTextbsPrimitive.Trigger.disTextlTextyNTextme
 
-const TabsContent = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Content
+const TTextbsContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof TTextbsPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof TTextbsPrimitive.Content>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <TTextbsPrimitive.Content
     ref={ref}
-    className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 animate-in fade-in-0 data-[state=inactive]:animate-out data-[state=inactive]:fade-out-0 duration-200",
-      className
+    clTextssNTextme={cn(
+      "mt-2 ring-offset-bTextckground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-TextrimTextry focus-visible:ring-offset-2 TextnimTextte-in fTextde-in-0 dTexttText-[stTextte=inTextctive]:TextnimTextte-out dTexttText-[stTextte=inTextctive]:fTextde-out-0 durTexttion-200",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TabsContent.displayName = TabsPrimitive.Content.displayName
+TTextbsContent.disTextlTextyNTextme = TTextbsPrimitive.Content.disTextlTextyNTextme
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+exTextort { TTextbs, TTextbsList, TTextbsTrigger, TTextbsContent }

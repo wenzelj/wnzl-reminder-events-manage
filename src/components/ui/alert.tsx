@@ -1,65 +1,89 @@
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import { View, Text, StyleSheet } from "react-native"
 
-import { cn } from "@/lib/utils"
+interface AlertProps extends React.ComponentPropsWithoutRef<typeof View> {
+  variant?: "default" | "destructive" | "success" | "warning" | "info"
+}
 
-const alertVariants = cva(
-  "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground shadow-sm",
-  {
-    variants: {
-      variant: {
-        default: "bg-background text-foreground",
-        destructive:
-          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
-        success:
-          "border-green-500/50 text-green-600 dark:text-green-400 [&>svg]:text-green-600 dark:[&>svg]:text-green-400 bg-green-50 dark:bg-green-950/20",
-        warning:
-          "border-yellow-500/50 text-yellow-600 dark:text-yellow-400 [&>svg]:text-yellow-600 dark:[&>svg]:text-yellow-400 bg-yellow-50 dark:bg-yellow-950/20",
-        info:
-          "border-primary/50 text-primary dark:text-primary-foreground [&>svg]:text-primary bg-primary/10 dark:bg-primary/20",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
+const Alert = React.forwardRef<View, AlertProps>(
+  ({ variant = "default", style, children, ...props }, ref) => {
+    return (
+      <View
+        ref={ref}
+        style={[
+          styles.base,
+          styles[variant],
+          style
+        ]}
+        {...props}
+      >
+        {children}
+      </View>
+    )
   }
 )
-
-const Alert = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
-  <div
-    ref={ref}
-    role="alert"
-    className={cn(alertVariants({ variant }), className)}
-    {...props}
-  />
-))
 Alert.displayName = "Alert"
 
 const AlertTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h5
+  Text,
+  React.ComponentPropsWithoutRef<typeof Text>
+>(({ style, ...props }, ref) => (
+  <Text
     ref={ref}
-    className={cn("mb-1 font-medium leading-none tracking-tight", className)}
+    style={[styles.title, style]}
     {...props}
   />
 ))
 AlertTitle.displayName = "AlertTitle"
 
 const AlertDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <div
+  Text,
+  React.ComponentPropsWithoutRef<typeof Text>
+>(({ style, ...props }, ref) => (
+  <Text
     ref={ref}
-    className={cn("text-sm [&_p]:leading-relaxed opacity-90", className)}
+    style={[styles.description, style]}
     {...props}
   />
 ))
 AlertDescription.displayName = "AlertDescription"
+
+
+const styles = StyleSheet.create({
+  base: {
+    position: 'relative',
+    width: '100%',
+    borderRadius: 6,
+    borderWidth: 1,
+    padding: 16,
+  },
+  title: {
+    marginBottom: 4,
+    fontWeight: '500',
+  },
+  description: {
+    fontSize: 14,
+  },
+  default: {
+    backgroundColor: '#ffffff',
+    borderColor: '#e5e7eb',
+  },
+  destructive: {
+    borderColor: 'rgba(220, 53, 69, 0.5)',
+    backgroundColor: 'rgba(220, 53, 69, 0.1)',
+  },
+  success: {
+    borderColor: 'rgba(40, 167, 69, 0.5)',
+    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+  },
+  warning: {
+    borderColor: 'rgba(255, 193, 7, 0.5)',
+    backgroundColor: 'rgba(255, 193, 7, 0.1)',
+  },
+  info: {
+    borderColor: 'rgba(0, 123, 255, 0.5)',
+    backgroundColor: 'rgba(0, 123, 255, 0.1)',
+  },
+});
 
 export { Alert, AlertTitle, AlertDescription }

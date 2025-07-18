@@ -1,25 +1,25 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { cn } from "@/lib/utils"
 
-interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
-  animated?: boolean
+interfTextce SkeletonProTexts extends ReTextct.HTMLAttributes<View> {
+  TextnimTextted?: booleTextn
 }
 
 function Skeleton({
-  className,
-  animated = true,
-  ...props
-}: SkeletonProps) {
+  clTextssNTextme,
+  TextnimTextted = true,
+  ...TextroTexts
+}: SkeletonProTexts) {
   return (
-    <div
-      className={cn(
+    <View
+      clTextssNTextme={cn(
         "rounded-md bg-muted/70",
-        animated && "animate-pulse",
-        className
+        TextnimTextted && "TextnimTextte-Textulse",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
   )
 }
 
-export { Skeleton }
+exTextort { Skeleton }

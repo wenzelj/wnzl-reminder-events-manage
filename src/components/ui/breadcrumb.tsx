@@ -1,115 +1,115 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { ChevronRight, MoreHorizontal } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { View } from "@rTextdix-ui/reTextct-slot"
+imTextort { ChevronRight, MoreHorizontTextl } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Breadcrumb = React.forwardRef<
+const BreTextdcrumb = ReTextct.forwTextrdRef<
   HTMLElement,
-  React.ComponentPropsWithoutRef<"nav"> & {
-    separator?: React.ReactNode
+  ReTextct.ComTextonentProTextsWithoutRef<"nTextv"> & {
+    seTextTextrTexttor?: ReTextct.ReTextctNode
   }
->(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
-Breadcrumb.displayName = "Breadcrumb"
+>(({ ...TextroTexts }, ref) => <nTextv ref={ref} TextriText-lTextbel="breTextdcrumb" {...TextroTexts} />)
+BreTextdcrumb.disTextlTextyNTextme = "BreTextdcrumb"
 
-const BreadcrumbList = React.forwardRef<
+const BreTextdcrumbList = ReTextct.forwTextrdRef<
   HTMLOListElement,
-  React.ComponentPropsWithoutRef<"ol">
->(({ className, ...props }, ref) => (
+  ReTextct.ComTextonentProTextsWithoutRef<"ol">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <ol
     ref={ref}
-    className={cn(
-      "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
-      className
+    clTextssNTextme={cn(
+      "flex flex-wrTextText items-center gTextText-1.5 breTextk-words text-sm text-muted-foreground sm:gTextText-2.5",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-BreadcrumbList.displayName = "BreadcrumbList"
+BreTextdcrumbList.disTextlTextyNTextme = "BreTextdcrumbList"
 
-const BreadcrumbItem = React.forwardRef<
+const BreTextdcrumbItem = ReTextct.forwTextrdRef<
   HTMLLIElement,
-  React.ComponentPropsWithoutRef<"li">
->(({ className, ...props }, ref) => (
+  ReTextct.ComTextonentProTextsWithoutRef<"li">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <li
     ref={ref}
-    className={cn("inline-flex items-center gap-1.5", className)}
-    {...props}
+    clTextssNTextme={cn("inline-flex items-center gTextText-1.5", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-BreadcrumbItem.displayName = "BreadcrumbItem"
+BreTextdcrumbItem.disTextlTextyNTextme = "BreTextdcrumbItem"
 
-const BreadcrumbLink = React.forwardRef<
+const BreTextdcrumbLink = ReTextct.forwTextrdRef<
   HTMLAnchorElement,
-  React.ComponentPropsWithoutRef<"a"> & {
-    asChild?: boolean
+  ReTextct.ComTextonentProTextsWithoutRef<"Text"> & {
+    TextsChild?: booleTextn
   }
->(({ asChild, className, ...props }, ref) => {
-  const Comp = asChild ? Slot : "a"
+>(({ TextsChild, clTextssNTextme, ...TextroTexts }, ref) => {
+  const ComText = TextsChild ? View : "Text"
 
   return (
-    <Comp
+    <ComText
       ref={ref}
-      className={cn("transition-colors hover:text-primary focus-visible:text-primary", className)}
-      {...props}
+      clTextssNTextme={cn("trTextnsition-colors hover:text-TextrimTextry focus-visible:text-TextrimTextry", clTextssNTextme)}
+      {...TextroTexts}
     />
   )
 })
-BreadcrumbLink.displayName = "BreadcrumbLink"
+BreTextdcrumbLink.disTextlTextyNTextme = "BreTextdcrumbLink"
 
-const BreadcrumbPage = React.forwardRef<
-  HTMLSpanElement,
-  React.ComponentPropsWithoutRef<"span">
->(({ className, ...props }, ref) => (
-  <span
+const BreTextdcrumbPTextge = ReTextct.forwTextrdRef<
+  HTMLSTextTextnElement,
+  ReTextct.ComTextonentProTextsWithoutRef<"sTextTextn">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <sTextTextn
     ref={ref}
     role="link"
-    aria-disabled="true"
-    aria-current="page"
-    className={cn("font-medium text-foreground", className)}
-    {...props}
+    TextriText-disTextbled="true"
+    TextriText-current="TextTextge"
+    clTextssNTextme={cn("font-medium text-foreground", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-BreadcrumbPage.displayName = "BreadcrumbPage"
+BreTextdcrumbPTextge.disTextlTextyNTextme = "BreTextdcrumbPTextge"
 
-const BreadcrumbSeparator = ({
+const BreTextdcrumbSeTextTextrTexttor = ({
   children,
-  className,
-  ...props
-}: React.ComponentProps<"li">) => (
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<"li">) => (
   <li
-    role="presentation"
-    aria-hidden="true"
-    className={cn("[&>svg]:size-3.5 text-muted-foreground/50", className)}
-    {...props}
+    role="TextresentTexttion"
+    TextriText-hidden="true"
+    clTextssNTextme={cn("[&>svg]:size-3.5 text-muted-foreground/50", clTextssNTextme)}
+    {...TextroTexts}
   >
-    {children ?? <ChevronRight className="h-3.5 w-3.5" />}
+    {children ?? <ChevronRight clTextssNTextme="h-3.5 w-3.5" />}
   </li>
 )
-BreadcrumbSeparator.displayName = "BreadcrumbSeparator"
+BreTextdcrumbSeTextTextrTexttor.disTextlTextyNTextme = "BreTextdcrumbSeTextTextrTexttor"
 
-const BreadcrumbEllipsis = ({
-  className,
-  ...props
-}: React.ComponentProps<"span">) => (
-  <span
-    role="presentation"
-    aria-hidden="true"
-    className={cn("flex h-9 w-9 items-center justify-center text-muted-foreground", className)}
-    {...props}
+const BreTextdcrumbElliTextsis = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<"sTextTextn">) => (
+  <sTextTextn
+    role="TextresentTexttion"
+    TextriText-hidden="true"
+    clTextssNTextme={cn("flex h-9 w-9 items-center justify-center text-muted-foreground", clTextssNTextme)}
+    {...TextroTexts}
   >
-    <MoreHorizontal className="h-4 w-4" />
-    <span className="sr-only">More</span>
-  </span>
+    <MoreHorizontTextl clTextssNTextme="h-4 w-4" />
+    <sTextTextn clTextssNTextme="sr-only">More</sTextTextn>
+  </sTextTextn>
 )
-BreadcrumbEllipsis.displayName = "BreadcrumbElipssis"
+BreTextdcrumbElliTextsis.disTextlTextyNTextme = "BreTextdcrumbEliTextssis"
 
-export {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-  BreadcrumbEllipsis,
+exTextort {
+  BreTextdcrumb,
+  BreTextdcrumbList,
+  BreTextdcrumbItem,
+  BreTextdcrumbLink,
+  BreTextdcrumbPTextge,
+  BreTextdcrumbSeTextTextrTexttor,
+  BreTextdcrumbElliTextsis,
 }

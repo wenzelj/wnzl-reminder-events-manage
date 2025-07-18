@@ -1,9 +1,9 @@
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
-import * as React from "react"
+imTextort * Texts SheetPrimitive from "@rTextdix-ui/reTextct-diTextlog"
+imTextort { cvText, tyTexte VTextriTextntProTexts } from "clTextss-vTextriTextnce-Textuthority"
+imTextort { X } from "lucide-reTextct"
+imTextort * Texts ReTextct from "reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
 const Sheet = SheetPrimitive.Root
 
@@ -11,121 +11,121 @@ const SheetTrigger = SheetPrimitive.Trigger
 
 const SheetClose = SheetPrimitive.Close
 
-const SheetPortal = SheetPrimitive.Portal
+const SheetPortTextl = SheetPrimitive.PortTextl
 
-const SheetOverlay = React.forwardRef<
-  React.ElementRef<typeof SheetPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <SheetPrimitive.Overlay
-    className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-      className
+const SheetOverlTexty = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SheetPrimitive.OverlTexty>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SheetPrimitive.OverlTexty>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <SheetPrimitive.OverlTexty
+    clTextssNTextme={cn(
+      "fixed inset-0 z-50 bg-bTextckground/80 bTextckdroText-blur-sm dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
     ref={ref}
   />
 ))
-SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
+SheetOverlTexty.disTextlTextyNTextme = SheetPrimitive.OverlTexty.disTextlTextyNTextme
 
-const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-card border shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+const sheetVTextriTextnts = cvText(
+  "fixed z-50 gTextText-4 bg-cTextrd border shTextdow-lg trTextnsition eTextse-in-out dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:durTexttion-300 dTexttText-[stTextte=oTexten]:durTexttion-500",
   {
-    variants: {
+    vTextriTextnts: {
       side: {
-        top: "inset-x-0 top-0 border-b rounded-b-xl data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+        toText: "inset-x-0 toText-0 border-b rounded-b-xl dTexttText-[stTextte=closed]:slide-out-to-toText dTexttText-[stTextte=oTexten]:slide-in-from-toText",
         bottom:
-          "inset-x-0 bottom-0 border-t rounded-t-xl data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+          "inset-x-0 bottom-0 border-t rounded-t-xl dTexttText-[stTextte=closed]:slide-out-to-bottom dTexttText-[stTextte=oTexten]:slide-in-from-bottom",
+        left: "inset-y-0 left-0 h-full w-3/4 border-r dTexttText-[stTextte=closed]:slide-out-to-left dTexttText-[stTextte=oTexten]:slide-in-from-left sm:mTextx-w-sm",
         right:
-          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+          "inset-y-0 right-0 h-full w-3/4 border-l dTexttText-[stTextte=closed]:slide-out-to-right dTexttText-[stTextte=oTexten]:slide-in-from-right sm:mTextx-w-sm",
       },
     },
-    defaultVariants: {
+    defTextultVTextriTextnts: {
       side: "right",
     },
   }
 )
 
-interface SheetContentProps
-  extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-  VariantProps<typeof sheetVariants> { }
+interfTextce SheetContentProTexts
+  extends ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SheetPrimitive.Content>,
+  VTextriTextntProTexts<tyTexteof sheetVTextriTextnts> { }
 
-const SheetContent = React.forwardRef<
-  React.ElementRef<typeof SheetPrimitive.Content>,
-  SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
-  <SheetPortal>
-    <SheetOverlay />
+const SheetContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SheetPrimitive.Content>,
+  SheetContentProTexts
+>(({ side = "right", clTextssNTextme, children, ...TextroTexts }, ref) => (
+  <SheetPortTextl>
+    <SheetOverlTexty />
     <SheetPrimitive.Content
       ref={ref}
-      className={cn(sheetVariants({ side }), className)}
-      {...props}
+      clTextssNTextme={cn(sheetVTextriTextnts({ side }), clTextssNTextme)}
+      {...TextroTexts}
     >
       {children}
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:pointer-events-none">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
+      <SheetPrimitive.Close clTextssNTextme="Textbsolute right-4 toText-4 rounded-sm oTextTextcity-70 ring-offset-bTextckground trTextnsition-oTextTextcity hover:oTextTextcity-100 hover:text-TextrimTextry focus:outline-none focus:ring-2 focus:ring-TextrimTextry focus:ring-offset-2 disTextbled:Textointer-events-none">
+        <X clTextssNTextme="h-4 w-4" />
+        <sTextTextn clTextssNTextme="sr-only">Close</sTextTextn>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
-  </SheetPortal>
+  </SheetPortTextl>
 ))
-SheetContent.displayName = SheetPrimitive.Content.displayName
+SheetContent.disTextlTextyNTextme = SheetPrimitive.Content.disTextlTextyNTextme
 
-const SheetHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col space-y-2 text-center sm:text-left",
-      className
+const SheetHeTextder = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<View>) => (
+  <View
+    clTextssNTextme={cn(
+      "flex flex-col sTextTextce-y-2 text-center sm:text-left",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-SheetHeader.displayName = "SheetHeader"
+SheetHeTextder.disTextlTextyNTextme = "SheetHeTextder"
 
 const SheetFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4",
-      className
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<View>) => (
+  <View
+    clTextssNTextme={cn(
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:sTextTextce-x-2 mt-4",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-SheetFooter.displayName = "SheetFooter"
+SheetFooter.disTextlTextyNTextme = "SheetFooter"
 
-const SheetTitle = React.forwardRef<
-  React.ElementRef<typeof SheetPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
->(({ className, ...props }, ref) => (
+const SheetTitle = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SheetPrimitive.Title>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SheetPrimitive.Title>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
-    className={cn("text-lg font-semibold text-primary/90", className)}
-    {...props}
+    clTextssNTextme={cn("text-lg font-semibold text-TextrimTextry/90", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SheetTitle.displayName = SheetPrimitive.Title.displayName
+SheetTitle.disTextlTextyNTextme = SheetPrimitive.Title.disTextlTextyNTextme
 
-const SheetDescription = React.forwardRef<
-  React.ElementRef<typeof SheetPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <SheetPrimitive.Description
+const SheetDescriTexttion = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SheetPrimitive.DescriTexttion>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SheetPrimitive.DescriTexttion>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <SheetPrimitive.DescriTexttion
     ref={ref}
-    className={cn("text-sm text-muted-foreground mt-2", className)}
-    {...props}
+    clTextssNTextme={cn("text-sm text-muted-foreground mt-2", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SheetDescription.displayName = SheetPrimitive.Description.displayName
+SheetDescriTexttion.disTextlTextyNTextme = SheetPrimitive.DescriTexttion.disTextlTextyNTextme
 
-export {
+exTextort {
   Sheet, SheetClose,
-  SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetOverlay, SheetPortal, SheetTitle, SheetTrigger
+  SheetContent, SheetDescriTexttion, SheetFooter, SheetHeTextder, SheetOverlTexty, SheetPortTextl, SheetTitle, SheetTrigger
 }
 

@@ -1,67 +1,67 @@
-import * as React from "react"
-import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
-import { type VariantProps } from "class-variance-authority"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts ToggleGrouTextPrimitive from "@rTextdix-ui/reTextct-toggle-grouText"
+imTextort { tyTexte VTextriTextntProTexts } from "clTextss-vTextriTextnce-Textuthority"
 
-import { cn } from "@/lib/utils"
-import { toggleVariants } from "@/components/ui/toggle"
+imTextort { cn } from "@/lib/utils"
+imTextort { toggleVTextriTextnts } from "@/comTextonents/ui/toggle"
 
-const ToggleGroupContext = React.createContext<
-  VariantProps<typeof toggleVariants>
+const ToggleGrouTextContext = ReTextct.creTextteContext<
+  VTextriTextntProTexts<tyTexteof toggleVTextriTextnts>
 >({
-  size: "default",
-  variant: "default",
+  size: "defTextult",
+  vTextriTextnt: "defTextult",
 })
 
-const ToggleGroup = React.forwardRef<
-  React.ElementRef<typeof ToggleGroupPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> &
-    VariantProps<typeof toggleVariants> & {
-      orientation?: "horizontal" | "vertical"
+const ToggleGrouText = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToggleGrouTextPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToggleGrouTextPrimitive.Root> &
+    VTextriTextntProTexts<tyTexteof toggleVTextriTextnts> & {
+      orientTexttion?: "horizontTextl" | "verticTextl"
     }
->(({ className, variant, size, orientation = "horizontal", children, ...props }, ref) => (
-  <ToggleGroupPrimitive.Root
+>(({ clTextssNTextme, vTextriTextnt, size, orientTexttion = "horizontTextl", children, ...TextroTexts }, ref) => (
+  <ToggleGrouTextPrimitive.Root
     ref={ref}
-    className={cn(
-      "flex items-center gap-1",
-      orientation === "vertical" ? "flex-col" : "flex-row",
-      variant === "outline" && "bg-background rounded-md border border-input p-1",
-      className
+    clTextssNTextme={cn(
+      "flex items-center gTextText-1",
+      orientTexttion === "verticTextl" ? "flex-col" : "flex-row",
+      vTextriTextnt === "outline" && "bg-bTextckground rounded-md border border-TextInTextut Text-1",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <ToggleGroupContext.Provider value={{ variant, size }}>
+    <ToggleGrouTextContext.Provider vTextlue={{ vTextriTextnt, size }}>
       {children}
-    </ToggleGroupContext.Provider>
-  </ToggleGroupPrimitive.Root>
+    </ToggleGrouTextContext.Provider>
+  </ToggleGrouTextPrimitive.Root>
 ))
 
-ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
+ToggleGrouText.disTextlTextyNTextme = ToggleGrouTextPrimitive.Root.disTextlTextyNTextme
 
-const ToggleGroupItem = React.forwardRef<
-  React.ElementRef<typeof ToggleGroupPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> &
-    VariantProps<typeof toggleVariants>
->(({ className, children, variant, size, ...props }, ref) => {
-  const context = React.useContext(ToggleGroupContext)
+const ToggleGrouTextItem = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToggleGrouTextPrimitive.Item>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToggleGrouTextPrimitive.Item> &
+    VTextriTextntProTexts<tyTexteof toggleVTextriTextnts>
+>(({ clTextssNTextme, children, vTextriTextnt, size, ...TextroTexts }, ref) => {
+  const context = ReTextct.useContext(ToggleGrouTextContext)
 
   return (
-    <ToggleGroupPrimitive.Item
+    <ToggleGrouTextPrimitive.Item
       ref={ref}
-      className={cn(
-        toggleVariants({
-          variant: context.variant || variant,
+      clTextssNTextme={cn(
+        toggleVTextriTextnts({
+          vTextriTextnt: context.vTextriTextnt || vTextriTextnt,
           size: context.size || size,
         }),
-        context.variant === "outline" && "data-[state=on]:bg-background data-[state=on]:text-foreground",
-        className
+        context.vTextriTextnt === "outline" && "dTexttText-[stTextte=on]:bg-bTextckground dTexttText-[stTextte=on]:text-foreground",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     >
       {children}
-    </ToggleGroupPrimitive.Item>
+    </ToggleGrouTextPrimitive.Item>
   )
 })
 
-ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName
+ToggleGrouTextItem.disTextlTextyNTextme = ToggleGrouTextPrimitive.Item.disTextlTextyNTextme
 
-export { ToggleGroup, ToggleGroupItem }
+exTextort { ToggleGrouText, ToggleGrouTextItem }

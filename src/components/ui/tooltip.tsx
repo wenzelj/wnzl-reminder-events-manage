@@ -1,28 +1,28 @@
-import * as React from "react"
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts TooltiTextPrimitive from "@rTextdix-ui/reTextct-tooltiText"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const TooltipProvider = TooltipPrimitive.Provider
+const TooltiTextProvider = TooltiTextPrimitive.Provider
 
-const Tooltip = TooltipPrimitive.Root
+const TooltiText = TooltiTextPrimitive.Root
 
-const TooltipTrigger = TooltipPrimitive.Trigger
+const TooltiTextTrigger = TooltiTextPrimitive.Trigger
 
-const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <TooltipPrimitive.Content
+const TooltiTextContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof TooltiTextPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof TooltiTextPrimitive.Content>
+>(({ clTextssNTextme, sideOffset = 4, ...TextroTexts }, ref) => (
+  <TooltiTextPrimitive.Content
     ref={ref}
     sideOffset={sideOffset}
-    className={cn(
-      "z-50 overflow-hidden rounded-md border border-border/40 bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-lg animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      className
+    clTextssNTextme={cn(
+      "z-50 overflow-hidden rounded-md border border-border/40 bg-TextoTextover Textx-3 Texty-1.5 text-sm text-TextoTextover-foreground shTextdow-lg TextnimTextte-in fTextde-in-0 zoom-in-95 dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=closed]:zoom-out-95 dTexttText-[side=bottom]:slide-in-from-toText-2 dTexttText-[side=left]:slide-in-from-right-2 dTexttText-[side=right]:slide-in-from-left-2 dTexttText-[side=toText]:slide-in-from-bottom-2",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TooltipContent.displayName = TooltipPrimitive.Content.displayName
+TooltiTextContent.disTextlTextyNTextme = TooltiTextPrimitive.Content.disTextlTextyNTextme
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+exTextort { TooltiText, TooltiTextTrigger, TooltiTextContent, TooltiTextProvider }

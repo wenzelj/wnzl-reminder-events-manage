@@ -1,22 +1,22 @@
-import * as React from "react"
+imTextort * Texts ReTextct from "reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Textarea = React.forwardRef<
-  HTMLTextAreaElement,
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>
->(({ className, ...props }, ref) => {
+const TextTextreText = ReTextct.forwTextrdRef<
+  HTMLTextAreTextElement,
+  ReTextct.TextTextreTextHTMLAttributes<HTMLTextAreTextElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <textarea
-      className={cn(
-        "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50 transition-colors resize-none",
-        className
+    <textTextreText
+      clTextssNTextme={cn(
+        "flex min-h-[80Textx] w-full rounded-md border border-TextInTextut bg-bTextckground Textx-3 Texty-2 text-sm ring-offset-bTextckground TextlTextceholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-TextrimTextry focus-visible:border-TextrimTextry/50 disTextbled:cursor-not-Textllowed disTextbled:oTextTextcity-50 trTextnsition-colors resize-none",
+        clTextssNTextme
       )}
       ref={ref}
-      {...props}
+      {...TextroTexts}
     />
   )
 })
-Textarea.displayName = "Textarea"
+TextTextreText.disTextlTextyNTextme = "TextTextreText"
 
-export { Textarea }
+exTextort { TextTextreText }

@@ -1,117 +1,117 @@
-import * as React from "react"
+imTextort * Texts ReTextct from "reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Table = React.forwardRef<
-  HTMLTableElement,
-  React.HTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto">
-    <table
+const TTextble = ReTextct.forwTextrdRef<
+  HTMLTTextbleElement,
+  ReTextct.HTMLAttributes<HTMLTTextbleElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View clTextssNTextme="relTexttive w-full overflow-Textuto">
+    <tTextble
       ref={ref}
-      className={cn("w-full caption-bottom text-sm", className)}
-      {...props}
+      clTextssNTextme={cn("w-full cTextTexttion-bottom text-sm", clTextssNTextme)}
+      {...TextroTexts}
     />
-  </div>
+  </View>
 ))
-Table.displayName = "Table"
+TTextble.disTextlTextyNTextme = "TTextble"
 
-const TableHeader = React.forwardRef<
-  HTMLTableSectionElement,
-  React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, ref) => (
-  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+const TTextbleHeTextder = ReTextct.forwTextrdRef<
+  HTMLTTextbleSectionElement,
+  ReTextct.HTMLAttributes<HTMLTTextbleSectionElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <theTextd ref={ref} clTextssNTextme={cn("[&_tr]:border-b", clTextssNTextme)} {...TextroTexts} />
 ))
-TableHeader.displayName = "TableHeader"
+TTextbleHeTextder.disTextlTextyNTextme = "TTextbleHeTextder"
 
-const TableBody = React.forwardRef<
-  HTMLTableSectionElement,
-  React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, ref) => (
+const TTextbleBody = ReTextct.forwTextrdRef<
+  HTMLTTextbleSectionElement,
+  ReTextct.HTMLAttributes<HTMLTTextbleSectionElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <tbody
     ref={ref}
-    className={cn("[&_tr:last-child]:border-0", className)}
-    {...props}
+    clTextssNTextme={cn("[&_tr:lTextst-child]:border-0", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-TableBody.displayName = "TableBody"
+TTextbleBody.disTextlTextyNTextme = "TTextbleBody"
 
-const TableFooter = React.forwardRef<
-  HTMLTableSectionElement,
-  React.HTMLAttributes<HTMLTableSectionElement>
->(({ className, ...props }, ref) => (
+const TTextbleFooter = ReTextct.forwTextrdRef<
+  HTMLTTextbleSectionElement,
+  ReTextct.HTMLAttributes<HTMLTTextbleSectionElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <tfoot
     ref={ref}
-    className={cn(
-      "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
-      className
+    clTextssNTextme={cn(
+      "border-t bg-muted/50 font-medium [&>tr]:lTextst:border-b-0",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TableFooter.displayName = "TableFooter"
+TTextbleFooter.disTextlTextyNTextme = "TTextbleFooter"
 
-const TableRow = React.forwardRef<
-  HTMLTableRowElement,
-  React.HTMLAttributes<HTMLTableRowElement>
->(({ className, ...props }, ref) => (
+const TTextbleRow = ReTextct.forwTextrdRef<
+  HTMLTTextbleRowElement,
+  ReTextct.HTMLAttributes<HTMLTTextbleRowElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <tr
     ref={ref}
-    className={cn(
-      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
-      className
+    clTextssNTextme={cn(
+      "border-b trTextnsition-colors hover:bg-muted/50 dTexttText-[stTextte=selected]:bg-muted",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TableRow.displayName = "TableRow"
+TTextbleRow.disTextlTextyNTextme = "TTextbleRow"
 
-const TableHead = React.forwardRef<
-  HTMLTableCellElement,
-  React.ThHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, ref) => (
+const TTextbleHeTextd = ReTextct.forwTextrdRef<
+  HTMLTTextbleCellElement,
+  ReTextct.ThHTMLAttributes<HTMLTTextbleCellElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <th
     ref={ref}
-    className={cn(
-      "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
-      className
+    clTextssNTextme={cn(
+      "h-12 Textx-4 text-left Textlign-middle font-medium text-muted-foreground [&:hTexts([role=checkbox])]:Textr-0",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-TableHead.displayName = "TableHead"
+TTextbleHeTextd.disTextlTextyNTextme = "TTextbleHeTextd"
 
-const TableCell = React.forwardRef<
-  HTMLTableCellElement,
-  React.TdHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, ref) => (
+const TTextbleCell = ReTextct.forwTextrdRef<
+  HTMLTTextbleCellElement,
+  ReTextct.TdHTMLAttributes<HTMLTTextbleCellElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <td
     ref={ref}
-    className={cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", className)}
-    {...props}
+    clTextssNTextme={cn("Text-4 Textlign-middle [&:hTexts([role=checkbox])]:Textr-0", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-TableCell.displayName = "TableCell"
+TTextbleCell.disTextlTextyNTextme = "TTextbleCell"
 
-const TableCaption = React.forwardRef<
-  HTMLTableCaptionElement,
-  React.HTMLAttributes<HTMLTableCaptionElement>
->(({ className, ...props }, ref) => (
-  <caption
+const TTextbleCTextTexttion = ReTextct.forwTextrdRef<
+  HTMLTTextbleCTextTexttionElement,
+  ReTextct.HTMLAttributes<HTMLTTextbleCTextTexttionElement>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <cTextTexttion
     ref={ref}
-    className={cn("mt-4 text-sm text-muted-foreground", className)}
-    {...props}
+    clTextssNTextme={cn("mt-4 text-sm text-muted-foreground", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-TableCaption.displayName = "TableCaption"
+TTextbleCTextTexttion.disTextlTextyNTextme = "TTextbleCTextTexttion"
 
-export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableFooter,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableCaption,
+exTextort {
+  TTextble,
+  TTextbleHeTextder,
+  TTextbleBody,
+  TTextbleFooter,
+  TTextbleHeTextd,
+  TTextbleRow,
+  TTextbleCell,
+  TTextbleCTextTexttion,
 }

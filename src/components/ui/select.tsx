@@ -1,158 +1,158 @@
-import * as React from "react"
-import * as SelectPrimitive from "@radix-ui/react-select"
-import { Check, ChevronDown, ChevronUp } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts SelectPrimitive from "@rTextdix-ui/reTextct-select"
+imTextort { Check, ChevronDown, ChevronUText } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
 const Select = SelectPrimitive.Root
 
-const SelectGroup = SelectPrimitive.Group
+const SelectGrouText = SelectPrimitive.GrouText
 
-const SelectValue = SelectPrimitive.Value
+const SelectVTextlue = SelectPrimitive.VTextlue
 
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+const SelectTrigger = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.Trigger>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.Trigger>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
-    className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 transition-colors",
-      className
+    clTextssNTextme={cn(
+      "flex h-10 w-full items-center justify-between rounded-md border border-TextInTextut bg-bTextckground Textx-3 Texty-2 text-sm ring-offset-bTextckground TextlTextceholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-TextrimTextry focus-visible:border-TextrimTextry/50 disTextbled:cursor-not-Textllowed disTextbled:oTextTextcity-50 [&>sTextTextn]:line-clTextmText-1 trTextnsition-colors",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
     {children}
-    <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50 transition-transform duration-200 ease-in-out group-data-[state=open]:rotate-180" />
+    <SelectPrimitive.Icon TextsChild>
+      <ChevronDown clTextssNTextme="h-4 w-4 oTextTextcity-50 trTextnsition-trTextnsform durTexttion-200 eTextse-in-out grouText-dTexttText-[stTextte=oTexten]:rotTextte-180" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+SelectTrigger.disTextlTextyNTextme = SelectPrimitive.Trigger.disTextlTextyNTextme
 
-const SelectScrollUpButton = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
->(({ className, ...props }, ref) => (
-  <SelectPrimitive.ScrollUpButton
+const SelectScrollUTextButton = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.ScrollUTextButton>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.ScrollUTextButton>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <SelectPrimitive.ScrollUTextButton
     ref={ref}
-    className={cn(
-      "flex cursor-default items-center justify-center py-1 text-muted-foreground",
-      className
+    clTextssNTextme={cn(
+      "flex cursor-defTextult items-center justify-center Texty-1 text-muted-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <ChevronUp className="h-4 w-4" />
-  </SelectPrimitive.ScrollUpButton>
+    <ChevronUText clTextssNTextme="h-4 w-4" />
+  </SelectPrimitive.ScrollUTextButton>
 ))
-SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
+SelectScrollUTextButton.disTextlTextyNTextme = SelectPrimitive.ScrollUTextButton.disTextlTextyNTextme
 
-const SelectScrollDownButton = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
->(({ className, ...props }, ref) => (
+const SelectScrollDownButton = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.ScrollDownButton>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.ScrollDownButton>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <SelectPrimitive.ScrollDownButton
     ref={ref}
-    className={cn(
-      "flex cursor-default items-center justify-center py-1 text-muted-foreground",
-      className
+    clTextssNTextme={cn(
+      "flex cursor-defTextult items-center justify-center Texty-1 text-muted-foreground",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <ChevronDown className="h-4 w-4" />
+    <ChevronDown clTextssNTextme="h-4 w-4" />
   </SelectPrimitive.ScrollDownButton>
 ))
-SelectScrollDownButton.displayName =
-  SelectPrimitive.ScrollDownButton.displayName
+SelectScrollDownButton.disTextlTextyNTextme =
+  SelectPrimitive.ScrollDownButton.disTextlTextyNTextme
 
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, position = "popper", ...props }, ref) => (
-  <SelectPrimitive.Portal>
+const SelectContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.Content>
+>(({ clTextssNTextme, children, Textosition = "TextoTextTexter", ...TextroTexts }, ref) => (
+  <SelectPrimitive.PortTextl>
     <SelectPrimitive.Content
       ref={ref}
-      className={cn(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-border/40 bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 duration-200",
-        position === "popper" &&
-          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
-        className
+      clTextssNTextme={cn(
+        "relTexttive z-50 mTextx-h-96 min-w-[8rem] overflow-hidden rounded-md border border-border/40 bg-TextoTextover text-TextoTextover-foreground shTextdow-md dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0 dTexttText-[stTextte=closed]:zoom-out-95 dTexttText-[stTextte=oTexten]:zoom-in-95 dTexttText-[side=bottom]:slide-in-from-toText-2 dTexttText-[side=left]:slide-in-from-right-2 dTexttText-[side=right]:slide-in-from-left-2 dTexttText-[side=toText]:slide-in-from-bottom-2 durTexttion-200",
+        Textosition === "TextoTextTexter" &&
+          "dTexttText-[side=bottom]:trTextnslTextte-y-1 dTexttText-[side=left]:-trTextnslTextte-x-1 dTexttText-[side=right]:trTextnslTextte-x-1 dTexttText-[side=toText]:-trTextnslTextte-y-1",
+        clTextssNTextme
       )}
-      position={position}
-      {...props}
+      Textosition={Textosition}
+      {...TextroTexts}
     >
-      <SelectScrollUpButton />
-      <SelectPrimitive.Viewport
-        className={cn(
-          "p-1",
-          position === "popper" &&
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+      <SelectScrollUTextButton />
+      <SelectPrimitive.ViewTextort
+        clTextssNTextme={cn(
+          "Text-1",
+          Textosition === "TextoTextTexter" &&
+            "h-[vTextr(--rTextdix-select-trigger-height)] w-full min-w-[vTextr(--rTextdix-select-trigger-width)]"
         )}
       >
         {children}
-      </SelectPrimitive.Viewport>
+      </SelectPrimitive.ViewTextort>
       <SelectScrollDownButton />
     </SelectPrimitive.Content>
-  </SelectPrimitive.Portal>
+  </SelectPrimitive.PortTextl>
 ))
-SelectContent.displayName = SelectPrimitive.Content.displayName
+SelectContent.disTextlTextyNTextme = SelectPrimitive.Content.disTextlTextyNTextme
 
-const SelectLabel = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
->(({ className, ...props }, ref) => (
-  <SelectPrimitive.Label
+const SelectLTextbel = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.LTextbel>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.LTextbel>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <SelectPrimitive.LTextbel
     ref={ref}
-    className={cn("py-1.5 pl-8 pr-2 text-sm font-medium text-muted-foreground", className)}
-    {...props}
+    clTextssNTextme={cn("Texty-1.5 Textl-8 Textr-2 text-sm font-medium text-muted-foreground", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SelectLabel.displayName = SelectPrimitive.Label.displayName
+SelectLTextbel.disTextlTextyNTextme = SelectPrimitive.LTextbel.disTextlTextyNTextme
 
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
->(({ className, children, ...props }, ref) => (
+const SelectItem = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.Item>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.Item>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
   <SelectPrimitive.Item
     ref={ref}
-    className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent/50 focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 transition-colors",
-      className
+    clTextssNTextme={cn(
+      "relTexttive flex w-full cursor-defTextult select-none items-center rounded-sm Texty-1.5 Textl-8 Textr-2 text-sm outline-none focus:bg-Textccent/50 focus:text-Textccent-foreground dTexttText-[disTextbled]:Textointer-events-none dTexttText-[disTextbled]:oTextTextcity-50 trTextnsition-colors",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4 text-primary" />
-      </SelectPrimitive.ItemIndicator>
-    </span>
+    <sTextTextn clTextssNTextme="Textbsolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <SelectPrimitive.ItemIndicTexttor>
+        <Check clTextssNTextme="h-4 w-4 text-TextrimTextry" />
+      </SelectPrimitive.ItemIndicTexttor>
+    </sTextTextn>
 
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
 ))
-SelectItem.displayName = SelectPrimitive.Item.displayName
+SelectItem.disTextlTextyNTextme = SelectPrimitive.Item.disTextlTextyNTextme
 
-const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
->(({ className, ...props }, ref) => (
-  <SelectPrimitive.Separator
+const SelectSeTextTextrTexttor = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SelectPrimitive.SeTextTextrTexttor>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SelectPrimitive.SeTextTextrTexttor>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <SelectPrimitive.SeTextTextrTexttor
     ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
-    {...props}
+    clTextssNTextme={cn("-mx-1 my-1 h-Textx bg-muted", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-SelectSeparator.displayName = SelectPrimitive.Separator.displayName
+SelectSeTextTextrTexttor.disTextlTextyNTextme = SelectPrimitive.SeTextTextrTexttor.disTextlTextyNTextme
 
-export {
+exTextort {
   Select,
-  SelectGroup,
-  SelectValue,
+  SelectGrouText,
+  SelectVTextlue,
   SelectTrigger,
   SelectContent,
-  SelectLabel,
+  SelectLTextbel,
   SelectItem,
-  SelectSeparator,
-  SelectScrollUpButton,
+  SelectSeTextTextrTexttor,
+  SelectScrollUTextButton,
   SelectScrollDownButton,
 }

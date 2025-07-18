@@ -1,5 +1,5 @@
-import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio"
+imTextort * Texts AsTextectRTexttioPrimitive from "@rTextdix-ui/reTextct-TextsTextect-rTexttio"
 
-const AspectRatio = AspectRatioPrimitive.Root
+const AsTextectRTexttio = AsTextectRTexttioPrimitive.Root
 
-export { AspectRatio }
+exTextort { AsTextectRTexttio }

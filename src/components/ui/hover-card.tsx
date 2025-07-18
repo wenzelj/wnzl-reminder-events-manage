@@ -1,27 +1,27 @@
-import * as React from "react"
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts HoverCTextrdPrimitive from "@rTextdix-ui/reTextct-hover-cTextrd"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const HoverCard = HoverCardPrimitive.Root
+const HoverCTextrd = HoverCTextrdPrimitive.Root
 
-const HoverCardTrigger = HoverCardPrimitive.Trigger
+const HoverCTextrdTrigger = HoverCTextrdPrimitive.Trigger
 
-const HoverCardContent = React.forwardRef<
-  React.ElementRef<typeof HoverCardPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
->(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
-  <HoverCardPrimitive.Content
+const HoverCTextrdContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof HoverCTextrdPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof HoverCTextrdPrimitive.Content>
+>(({ clTextssNTextme, Textlign = "center", sideOffset = 4, ...TextroTexts }, ref) => (
+  <HoverCTextrdPrimitive.Content
     ref={ref}
-    align={align}
+    Textlign={Textlign}
     sideOffset={sideOffset}
-    className={cn(
-      "z-50 w-64 rounded-md border border-border/40 bg-popover/95 backdrop-blur-sm p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 duration-200",
-      className
+    clTextssNTextme={cn(
+      "z-50 w-64 rounded-md border border-border/40 bg-TextoTextover/95 bTextckdroText-blur-sm Text-4 text-TextoTextover-foreground shTextdow-md outline-none dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0 dTexttText-[stTextte=closed]:zoom-out-95 dTexttText-[stTextte=oTexten]:zoom-in-95 dTexttText-[side=bottom]:slide-in-from-toText-2 dTexttText-[side=left]:slide-in-from-right-2 dTexttText-[side=right]:slide-in-from-left-2 dTexttText-[side=toText]:slide-in-from-bottom-2 durTexttion-200",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-HoverCardContent.displayName = HoverCardPrimitive.Content.displayName
+HoverCTextrdContent.disTextlTextyNTextme = HoverCTextrdPrimitive.Content.disTextlTextyNTextme
 
-export { HoverCard, HoverCardTrigger, HoverCardContent }
+exTextort { HoverCTextrd, HoverCTextrdTrigger, HoverCTextrdContent }

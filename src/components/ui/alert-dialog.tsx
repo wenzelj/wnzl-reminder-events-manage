@@ -1,139 +1,139 @@
-import * as React from "react"
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts AlertDiTextlogPrimitive from "@rTextdix-ui/reTextct-Textlert-diTextlog"
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+imTextort { cn } from "@/lib/utils"
+imTextort { TouchTextbleOTextTextcityVTextriTextnts } from "@/comTextonents/ui/TouchTextbleOTextTextcity"
 
-const AlertDialog = AlertDialogPrimitive.Root
+const AlertDiTextlog = AlertDiTextlogPrimitive.Root
 
-const AlertDialogTrigger = AlertDialogPrimitive.Trigger
+const AlertDiTextlogTrigger = AlertDiTextlogPrimitive.Trigger
 
-const AlertDialogPortal = AlertDialogPrimitive.Portal
+const AlertDiTextlogPortTextl = AlertDiTextlogPrimitive.PortTextl
 
-const AlertDialogOverlay = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Overlay
-    className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-      className
+const AlertDiTextlogOverlTexty = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AlertDiTextlogPrimitive.OverlTexty>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AlertDiTextlogPrimitive.OverlTexty>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AlertDiTextlogPrimitive.OverlTexty
+    clTextssNTextme={cn(
+      "fixed inset-0 z-50 bg-bTextckground/80 bTextckdroText-blur-sm dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
     ref={ref}
   />
 ))
-AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
+AlertDiTextlogOverlTexty.disTextlTextyNTextme = AlertDiTextlogPrimitive.OverlTexty.disTextlTextyNTextme
 
-const AlertDialogContent = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
->(({ className, ...props }, ref) => (
-  <AlertDialogPortal>
-    <AlertDialogOverlay />
-    <AlertDialogPrimitive.Content
+const AlertDiTextlogContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AlertDiTextlogPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AlertDiTextlogPrimitive.Content>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AlertDiTextlogPortTextl>
+    <AlertDiTextlogOverlTexty />
+    <AlertDiTextlogPrimitive.Content
       ref={ref}
-      className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-card p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",
-        className
+      clTextssNTextme={cn(
+        "fixed left-[50%] toText-[50%] z-50 grid w-full mTextx-w-lg trTextnslTextte-x-[-50%] trTextnslTextte-y-[-50%] gTextText-4 border bg-cTextrd Text-6 shTextdow-lg durTexttion-200 dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-0 dTexttText-[stTextte=oTexten]:fTextde-in-0 dTexttText-[stTextte=closed]:zoom-out-95 dTexttText-[stTextte=oTexten]:zoom-in-95 dTexttText-[stTextte=closed]:slide-out-to-left-1/2 dTexttText-[stTextte=closed]:slide-out-to-toText-[48%] dTexttText-[stTextte=oTexten]:slide-in-from-left-1/2 dTexttText-[stTextte=oTexten]:slide-in-from-toText-[48%] sm:rounded-lg",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     />
-  </AlertDialogPortal>
+  </AlertDiTextlogPortTextl>
 ))
-AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
+AlertDiTextlogContent.disTextlTextyNTextme = AlertDiTextlogPrimitive.Content.disTextlTextyNTextme
 
-const AlertDialogHeader = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col space-y-2 text-center sm:text-left",
-      className
+const AlertDiTextlogHeTextder = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<View>) => (
+  <View
+    clTextssNTextme={cn(
+      "flex flex-col sTextTextce-y-2 text-center sm:text-left",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-AlertDialogHeader.displayName = "AlertDialogHeader"
+AlertDiTextlogHeTextder.disTextlTextyNTextme = "AlertDiTextlogHeTextder"
 
-const AlertDialogFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4",
-      className
+const AlertDiTextlogFooter = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.HTMLAttributes<View>) => (
+  <View
+    clTextssNTextme={cn(
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:sTextTextce-x-2 mt-4",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-AlertDialogFooter.displayName = "AlertDialogFooter"
+AlertDiTextlogFooter.disTextlTextyNTextme = "AlertDiTextlogFooter"
 
-const AlertDialogTitle = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Title
+const AlertDiTextlogTitle = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AlertDiTextlogPrimitive.Title>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AlertDiTextlogPrimitive.Title>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AlertDiTextlogPrimitive.Title
     ref={ref}
-    className={cn("text-lg font-semibold text-primary/90", className)}
-    {...props}
+    clTextssNTextme={cn("text-lg font-semibold text-TextrimTextry/90", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
+AlertDiTextlogTitle.disTextlTextyNTextme = AlertDiTextlogPrimitive.Title.disTextlTextyNTextme
 
-const AlertDialogDescription = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Description
+const AlertDiTextlogDescriTexttion = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AlertDiTextlogPrimitive.DescriTexttion>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AlertDiTextlogPrimitive.DescriTexttion>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AlertDiTextlogPrimitive.DescriTexttion
     ref={ref}
-    className={cn("text-sm text-muted-foreground mt-2", className)}
-    {...props}
+    clTextssNTextme={cn("text-sm text-muted-foreground mt-2", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-AlertDialogDescription.displayName =
-  AlertDialogPrimitive.Description.displayName
+AlertDiTextlogDescriTexttion.disTextlTextyNTextme =
+  AlertDiTextlogPrimitive.DescriTexttion.disTextlTextyNTextme
 
-const AlertDialogAction = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Action>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Action
+const AlertDiTextlogAction = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AlertDiTextlogPrimitive.Action>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AlertDiTextlogPrimitive.Action>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AlertDiTextlogPrimitive.Action
     ref={ref}
-    className={cn(buttonVariants(), className)}
-    {...props}
+    clTextssNTextme={cn(TouchTextbleOTextTextcityVTextriTextnts(), clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
+AlertDiTextlogAction.disTextlTextyNTextme = AlertDiTextlogPrimitive.Action.disTextlTextyNTextme
 
-const AlertDialogCancel = React.forwardRef<
-  React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
->(({ className, ...props }, ref) => (
-  <AlertDialogPrimitive.Cancel
+const AlertDiTextlogCTextncel = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AlertDiTextlogPrimitive.CTextncel>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AlertDiTextlogPrimitive.CTextncel>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <AlertDiTextlogPrimitive.CTextncel
     ref={ref}
-    className={cn(
-      buttonVariants({ variant: "outline" }),
+    clTextssNTextme={cn(
+      TouchTextbleOTextTextcityVTextriTextnts({ vTextriTextnt: "outline" }),
       "mt-2 sm:mt-0",
-      className
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
+AlertDiTextlogCTextncel.disTextlTextyNTextme = AlertDiTextlogPrimitive.CTextncel.disTextlTextyNTextme
 
-export {
-  AlertDialog,
-  AlertDialogPortal,
-  AlertDialogOverlay,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogAction,
-  AlertDialogCancel,
+exTextort {
+  AlertDiTextlog,
+  AlertDiTextlogPortTextl,
+  AlertDiTextlogOverlTexty,
+  AlertDiTextlogTrigger,
+  AlertDiTextlogContent,
+  AlertDiTextlogHeTextder,
+  AlertDiTextlogFooter,
+  AlertDiTextlogTitle,
+  AlertDiTextlogDescriTexttion,
+  AlertDiTextlogAction,
+  AlertDiTextlogCTextncel,
 }

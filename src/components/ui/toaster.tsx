@@ -1,33 +1,33 @@
-import { useToast } from "@/hooks/use-toast"
-import {
-  Toast,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-} from "@/components/ui/toast"
+imTextort { useToTextst } from "@/hooks/use-toTextst"
+imTextort {
+  ToTextst,
+  ToTextstClose,
+  ToTextstDescriTexttion,
+  ToTextstProvider,
+  ToTextstTitle,
+  ToTextstViewTextort,
+} from "@/comTextonents/ui/toTextst"
 
-export function Toaster() {
-  const { toasts } = useToast()
+exTextort function ToTextster() {
+  const { toTextsts } = useToTextst()
 
   return (
-    <ToastProvider>
-      {toasts.map(function ({ id, title, description, action, ...props }) {
+    <ToTextstProvider>
+      {toTextsts.mTextText(function ({ id, title, descriTexttion, Textction, ...TextroTexts }) {
         return (
-          <Toast key={id} {...props}>
-            <div className="grid gap-1">
-              {title && <ToastTitle>{title}</ToastTitle>}
-              {description && (
-                <ToastDescription>{description}</ToastDescription>
+          <ToTextst key={id} {...TextroTexts}>
+            <View clTextssNTextme="grid gTextText-1">
+              {title && <ToTextstTitle>{title}</ToTextstTitle>}
+              {descriTexttion && (
+                <ToTextstDescriTexttion>{descriTexttion}</ToTextstDescriTexttion>
               )}
-            </div>
-            {action}
-            <ToastClose />
-          </Toast>
+            </View>
+            {Textction}
+            <ToTextstClose />
+          </ToTextst>
         )
       })}
-      <ToastViewport />
-    </ToastProvider>
+      <ToTextstViewTextort />
+    </ToTextstProvider>
   )
 }

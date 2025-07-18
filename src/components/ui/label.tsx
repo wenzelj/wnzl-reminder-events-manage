@@ -1,43 +1,43 @@
-import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
-import { cva, type VariantProps } from "class-variance-authority"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts LTextbelPrimitive from "@rTextdix-ui/reTextct-lTextbel"
+imTextort { cvText, tyTexte VTextriTextntProTexts } from "clTextss-vTextriTextnce-Textuthority"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const labelVariants = cva(
-  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+const lTextbelVTextriTextnts = cvText(
+  "text-sm font-medium leTextding-none Texteer-disTextbled:cursor-not-Textllowed Texteer-disTextbled:oTextTextcity-70",
   {
-    variants: {
-      variant: {
-        default: "text-foreground",
+    vTextriTextnts: {
+      vTextriTextnt: {
+        defTextult: "text-foreground",
         muted: "text-muted-foreground",
-        accent: "text-primary",
+        Textccent: "text-TextrimTextry",
       },
       size: {
-        default: "text-sm",
+        defTextult: "text-sm",
         xs: "text-xs",
         sm: "text-sm",
-        lg: "text-base",
+        lg: "text-bTextse",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
+    defTextultVTextriTextnts: {
+      vTextriTextnt: "defTextult",
+      size: "defTextult",
     },
   }
 )
 
-const Label = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
-    VariantProps<typeof labelVariants>
->(({ className, variant, size, ...props }, ref) => (
-  <LabelPrimitive.Root
+const LTextbel = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof LTextbelPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof LTextbelPrimitive.Root> &
+    VTextriTextntProTexts<tyTexteof lTextbelVTextriTextnts>
+>(({ clTextssNTextme, vTextriTextnt, size, ...TextroTexts }, ref) => (
+  <LTextbelPrimitive.Root
     ref={ref}
-    className={cn(labelVariants({ variant, size }), className)}
-    {...props}
+    clTextssNTextme={cn(lTextbelVTextriTextnts({ vTextriTextnt, size }), clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-Label.displayName = LabelPrimitive.Root.displayName
+LTextbel.disTextlTextyNTextme = LTextbelPrimitive.Root.disTextlTextyNTextme
 
-export { Label }
+exTextort { LTextbel }

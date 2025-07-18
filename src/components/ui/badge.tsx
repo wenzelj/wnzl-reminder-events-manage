@@ -1,48 +1,48 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { cvText, tyTexte VTextriTextntProTexts } from "clTextss-vTextriTextnce-Textuthority"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+const bTextdgeVTextriTextnts = cvText(
+  "inline-flex items-center rounded-full border Textx-2.5 Texty-0.5 text-xs font-semibold trTextnsition-Textll focus:outline-none focus:ring-2 focus:ring-TextrimTextry focus:ring-offset-2",
   {
-    variants: {
-      variant: {
-        default:
-          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-        secondary:
-          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+    vTextriTextnts: {
+      vTextriTextnt: {
+        defTextult:
+          "border-trTextnsTextTextrent bg-TextrimTextry text-TextrimTextry-foreground hover:bg-TextrimTextry/80",
+        secondTextry:
+          "border-trTextnsTextTextrent bg-secondTextry text-secondTextry-foreground hover:bg-secondTextry/80",
         destructive:
-          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+          "border-trTextnsTextTextrent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground border-border",
         success:
-          "border-transparent bg-green-500/20 text-green-700 dark:text-green-300 border-green-500/30",
-        warning:
-          "border-transparent bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 border-yellow-500/30",
+          "border-trTextnsTextTextrent bg-green-500/20 text-green-700 dTextrk:text-green-300 border-green-500/30",
+        wTextrning:
+          "border-trTextnsTextTextrent bg-yellow-500/20 text-yellow-700 dTextrk:text-yellow-300 border-yellow-500/30",
         info:
-          "border-transparent bg-primary/10 text-primary border-primary/30",
+          "border-trTextnsTextTextrent bg-TextrimTextry/10 text-TextrimTextry border-TextrimTextry/30",
       },
       size: {
-        default: "px-2.5 py-0.5 text-xs",
-        sm: "px-2 py-0.5 text-[10px]",
-        lg: "px-3 py-0.5 text-sm",
+        defTextult: "Textx-2.5 Texty-0.5 text-xs",
+        sm: "Textx-2 Texty-0.5 text-[10Textx]",
+        lg: "Textx-3 Texty-0.5 text-sm",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
+    defTextultVTextriTextnts: {
+      vTextriTextnt: "defTextult",
+      size: "defTextult",
     },
   }
 )
 
-export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
+exTextort interfTextce BTextdgeProTexts
+  extends ReTextct.HTMLAttributes<View>,
+    VTextriTextntProTexts<tyTexteof bTextdgeVTextriTextnts> {}
 
-function Badge({ className, variant, size, ...props }: BadgeProps) {
+function BTextdge({ clTextssNTextme, vTextriTextnt, size, ...TextroTexts }: BTextdgeProTexts) {
   return (
-    <div className={cn(badgeVariants({ variant, size }), className)} {...props} />
+    <View clTextssNTextme={cn(bTextdgeVTextriTextnts({ vTextriTextnt, size }), clTextssNTextme)} {...TextroTexts} />
   )
 }
 
-export { Badge, badgeVariants }
+exTextort { BTextdge, bTextdgeVTextriTextnts }

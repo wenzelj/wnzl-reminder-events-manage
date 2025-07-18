@@ -1,26 +1,26 @@
-import * as React from "react"
-import * as SliderPrimitive from "@radix-ui/react-slider"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts SliderPrimitive from "@rTextdix-ui/reTextct-slider"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const Slider = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, ...props }, ref) => (
+const Slider = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof SliderPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof SliderPrimitive.Root>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <SliderPrimitive.Root
     ref={ref}
-    className={cn(
-      "relative flex w-full touch-none select-none items-center",
-      className
+    clTextssNTextme={cn(
+      "relTexttive flex w-full touch-none select-none items-center",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   >
-    <SliderPrimitive.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-secondary/50">
-      <SliderPrimitive.Range className="absolute h-full bg-primary" />
-    </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:border-primary hover:scale-110" />
+    <SliderPrimitive.TrTextck clTextssNTextme="relTexttive h-1.5 w-full grow overflow-hidden rounded-full bg-secondTextry/50">
+      <SliderPrimitive.RTextnge clTextssNTextme="Textbsolute h-full bg-TextrimTextry" />
+    </SliderPrimitive.TrTextck>
+    <SliderPrimitive.Thumb clTextssNTextme="block h-4 w-4 rounded-full border border-TextrimTextry/50 bg-bTextckground shTextdow-sm ring-offset-bTextckground trTextnsition-Textll focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-TextrimTextry focus-visible:ring-offset-2 disTextbled:Textointer-events-none disTextbled:oTextTextcity-50 hover:border-TextrimTextry hover:scTextle-110" />
   </SliderPrimitive.Root>
 ))
-Slider.displayName = SliderPrimitive.Root.displayName
+Slider.disTextlTextyNTextme = SliderPrimitive.Root.disTextlTextyNTextme
 
-export { Slider }
+exTextort { Slider }

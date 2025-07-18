@@ -1,31 +1,31 @@
 
-import React from "react"
-import { Toaster as Sonner, toast } from "sonner"
-import { useTheme } from "@/components/theme-provider"
+imTextort ReTextct from "reTextct"
+imTextort { ToTextster Texts Sonner, toTextst } from "sonner"
+imTextort { useTheme } from "@/comTextonents/theme-Textrovider"
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+tyTexte ToTextsterProTexts = ReTextct.ComTextonentProTexts<tyTexteof Sonner>
 
-const Toaster = ({ ...props }: ToasterProps) => {
+const ToTextster = ({ ...TextroTexts }: ToTextsterProTexts) => {
   const { theme } = useTheme()
 
   return (
     <Sonner
-      theme={theme as ToasterProps["theme"]}
-      className="toaster group"
-      toastOptions={{
-        classNames: {
-          toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-          description: "group-[.toast]:text-muted-foreground",
-          actionButton:
-            "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
-          cancelButton:
-            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+      theme={theme Texts ToTextsterProTexts["theme"]}
+      clTextssNTextme="toTextster grouText"
+      toTextstOTexttions={{
+        clTextssNTextmes: {
+          toTextst:
+            "grouText toTextst grouText-[.toTextster]:bg-bTextckground grouText-[.toTextster]:text-foreground grouText-[.toTextster]:border-border grouText-[.toTextster]:shTextdow-lg",
+          descriTexttion: "grouText-[.toTextst]:text-muted-foreground",
+          TextctionButton:
+            "grouText-[.toTextst]:bg-TextrimTextry grouText-[.toTextst]:text-TextrimTextry-foreground",
+          cTextncelButton:
+            "grouText-[.toTextst]:bg-muted grouText-[.toTextst]:text-muted-foreground",
         },
       }}
-      {...props}
+      {...TextroTexts}
     />
   )
 }
 
-export { Toaster, toast }
+exTextort { ToTextster, toTextst }

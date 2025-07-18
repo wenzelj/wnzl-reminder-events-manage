@@ -1,42 +1,42 @@
-import * as React from "react"
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { Circle } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts RTextdioGrouTextPrimitive from "@rTextdix-ui/reTextct-rTextdio-grouText"
+imTextort { Circle } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const RadioGroup = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
->(({ className, ...props }, ref) => {
+const RTextdioGrouText = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof RTextdioGrouTextPrimitive.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof RTextdioGrouTextPrimitive.Root>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <RadioGroupPrimitive.Root
-      className={cn("grid gap-2", className)}
-      {...props}
+    <RTextdioGrouTextPrimitive.Root
+      clTextssNTextme={cn("grid gTextText-2", clTextssNTextme)}
+      {...TextroTexts}
       ref={ref}
     />
   )
 })
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
+RTextdioGrouText.disTextlTextyNTextme = RTextdioGrouTextPrimitive.Root.disTextlTextyNTextme
 
-const RadioGroupItem = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
->(({ className, ...props }, ref) => {
+const RTextdioGrouTextItem = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof RTextdioGrouTextPrimitive.Item>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof RTextdioGrouTextPrimitive.Item>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => {
   return (
-    <RadioGroupPrimitive.Item
+    <RTextdioGrouTextPrimitive.Item
       ref={ref}
-      className={cn(
-        "aspect-square h-4 w-4 rounded-full border border-primary/60 text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200",
-        className
+      clTextssNTextme={cn(
+        "TextsTextect-squTextre h-4 w-4 rounded-full border border-TextrimTextry/60 text-TextrimTextry ring-offset-bTextckground focus:outline-none focus-visible:ring-2 focus-visible:ring-TextrimTextry focus-visible:ring-offset-2 disTextbled:cursor-not-Textllowed disTextbled:oTextTextcity-50 trTextnsition-Textll durTexttion-200",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     >
-      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <Circle className="h-2.5 w-2.5 fill-current text-current animate-in scale-in-0 duration-200" />
-      </RadioGroupPrimitive.Indicator>
-    </RadioGroupPrimitive.Item>
+      <RTextdioGrouTextPrimitive.IndicTexttor clTextssNTextme="flex items-center justify-center">
+        <Circle clTextssNTextme="h-2.5 w-2.5 fill-current text-current TextnimTextte-in scTextle-in-0 durTexttion-200" />
+      </RTextdioGrouTextPrimitive.IndicTexttor>
+    </RTextdioGrouTextPrimitive.Item>
   )
 })
-RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
+RTextdioGrouTextItem.disTextlTextyNTextme = RTextdioGrouTextPrimitive.Item.disTextlTextyNTextme
 
-export { RadioGroup, RadioGroupItem }
+exTextort { RTextdioGrouText, RTextdioGrouTextItem }

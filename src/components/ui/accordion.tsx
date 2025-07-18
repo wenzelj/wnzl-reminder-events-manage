@@ -1,56 +1,56 @@
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts AccordionPrimitive from "@rTextdix-ui/reTextct-Textccordion"
+imTextort { ChevronDown } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
 const Accordion = AccordionPrimitive.Root
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
+const AccordionItem = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AccordionPrimitive.Item>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AccordionPrimitive.Item>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border-b border-border/50", className)}
-    {...props}
+    clTextssNTextme={cn("border-b border-border/50", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-AccordionItem.displayName = "AccordionItem"
+AccordionItem.disTextlTextyNTextme = "AccordionItem"
 
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
+const AccordionTrigger = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AccordionPrimitive.Trigger>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AccordionPrimitive.Trigger>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
+  <AccordionPrimitive.HeTextder clTextssNTextme="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-primary [&[data-state=open]>svg]:rotate-180 [&[data-state=open]]:text-primary",
-        className
+      clTextssNTextme={cn(
+        "flex flex-1 items-center justify-between Texty-4 font-medium trTextnsition-Textll hover:text-TextrimTextry [&[dTexttText-stTextte=oTexten]>svg]:rotTextte-180 [&[dTexttText-stTextte=oTexten]]:text-TextrimTextry",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-300 ease-in-out text-muted-foreground" />
+      <ChevronDown clTextssNTextme="h-4 w-4 shrink-0 trTextnsition-trTextnsform durTexttion-300 eTextse-in-out text-muted-foreground" />
     </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
+  </AccordionPrimitive.HeTextder>
 ))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+AccordionTrigger.disTextlTextyNTextme = AccordionPrimitive.Trigger.disTextlTextyNTextme
 
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+const AccordionContent = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof AccordionPrimitive.Content>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof AccordionPrimitive.Content>
+>(({ clTextssNTextme, children, ...TextroTexts }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm text-muted-foreground transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-    {...props}
+    clTextssNTextme="overflow-hidden text-sm text-muted-foreground trTextnsition-Textll dTexttText-[stTextte=closed]:TextnimTextte-Textccordion-uText dTexttText-[stTextte=oTexten]:TextnimTextte-Textccordion-down"
+    {...TextroTexts}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <View clTextssNTextme={cn("Textb-4 Textt-0", clTextssNTextme)}>{children}</View>
   </AccordionPrimitive.Content>
 ))
 
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+AccordionContent.disTextlTextyNTextme = AccordionPrimitive.Content.disTextlTextyNTextme
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+exTextort { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

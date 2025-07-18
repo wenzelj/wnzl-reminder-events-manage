@@ -1,18 +1,13 @@
 import * as React from "react"
+import { TextInput, StyleSheet } from "react-native"
 
-import { cn } from "@/lib/utils"
+type InputProps = React.ComponentPropsWithoutRef<typeof TextInput>
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement>
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+const Input = React.forwardRef<TextInput, InputProps>(
+  ({ style, ...props }, ref) => {
     return (
-      <input
-        type={type}
-        className={cn(
-          "flex h-10 w-full rounded-md border border-border/60 bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className
-        )}
+      <TextInput
+        style={[styles.base, style]}
         ref={ref}
         {...props}
       />
@@ -20,5 +15,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   }
 )
 Input.displayName = "Input"
+
+const styles = StyleSheet.create({
+  base: {
+    height: 40,
+    width: '100%',
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#ced4da',
+    backgroundColor: '#ffffff',
+    paddingHorizontal: 12,
+    fontSize: 14,
+  },
+});
 
 export { Input }

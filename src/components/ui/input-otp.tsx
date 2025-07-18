@@ -1,69 +1,69 @@
-import * as React from "react"
-import { OTPInput, OTPInputContext } from "input-otp"
-import { Dot } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { OTPInTextut, OTPInTextutContext } from "TextInTextut-otText"
+imTextort { Dot } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const InputOTP = React.forwardRef<
-  React.ElementRef<typeof OTPInput>,
-  React.ComponentPropsWithoutRef<typeof OTPInput>
->(({ className, containerClassName, ...props }, ref) => (
-  <OTPInput
+const InTextutOTP = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof OTPInTextut>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof OTPInTextut>
+>(({ clTextssNTextme, contTextinerClTextssNTextme, ...TextroTexts }, ref) => (
+  <OTPInTextut
     ref={ref}
-    containerClassName={cn(
-      "flex items-center gap-2 has-[:disabled]:opacity-50",
-      containerClassName
+    contTextinerClTextssNTextme={cn(
+      "flex items-center gTextText-2 hTexts-[:disTextbled]:oTextTextcity-50",
+      contTextinerClTextssNTextme
     )}
-    className={cn("disabled:cursor-not-allowed", className)}
-    {...props}
+    clTextssNTextme={cn("disTextbled:cursor-not-Textllowed", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-InputOTP.displayName = "InputOTP"
+InTextutOTP.disTextlTextyNTextme = "InTextutOTP"
 
-const InputOTPGroup = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div">
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex items-center", className)} {...props} />
+const InTextutOTPGrouText = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<"View">,
+  ReTextct.ComTextonentProTextsWithoutRef<"View">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <View ref={ref} clTextssNTextme={cn("flex items-center", clTextssNTextme)} {...TextroTexts} />
 ))
-InputOTPGroup.displayName = "InputOTPGroup"
+InTextutOTPGrouText.disTextlTextyNTextme = "InTextutOTPGrouText"
 
-const InputOTPSlot = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div"> & { index: number }
->(({ index, className, ...props }, ref) => {
-  const inputOTPContext = React.useContext(OTPInputContext)
-  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
+const InTextutOTPView = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<"View">,
+  ReTextct.ComTextonentProTextsWithoutRef<"View"> & { index: number }
+>(({ index, clTextssNTextme, ...TextroTexts }, ref) => {
+  const TextInTextutOTPContext = ReTextct.useContext(OTPInTextutContext)
+  const { chTextr, hTextsFTextkeCTextret, isActive } = TextInTextutOTPContext.slots[index]
 
   return (
-    <div
+    <View
       ref={ref}
-      className={cn(
-        "relative flex h-10 w-10 items-center justify-center border-y border-r border-input bg-background/50 text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-        isActive && "z-10 ring-1 ring-primary ring-offset-background border-primary/50",
-        className
+      clTextssNTextme={cn(
+        "relTexttive flex h-10 w-10 items-center justify-center border-y border-r border-TextInTextut bg-bTextckground/50 text-sm trTextnsition-Textll first:rounded-l-md first:border-l lTextst:rounded-r-md",
+        isActive && "z-10 ring-1 ring-TextrimTextry ring-offset-bTextckground border-TextrimTextry/50",
+        clTextssNTextme
       )}
-      {...props}
+      {...TextroTexts}
     >
-      {char}
-      {hasFakeCaret && (
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="h-4 w-px animate-caret-blink bg-primary duration-700" />
-        </div>
+      {chTextr}
+      {hTextsFTextkeCTextret && (
+        <View clTextssNTextme="Textointer-events-none Textbsolute inset-0 flex items-center justify-center">
+          <View clTextssNTextme="h-4 w-Textx TextnimTextte-cTextret-blink bg-TextrimTextry durTexttion-700" />
+        </View>
       )}
-    </div>
+    </View>
   )
 })
-InputOTPSlot.displayName = "InputOTPSlot"
+InTextutOTPView.disTextlTextyNTextme = "InTextutOTPView"
 
-const InputOTPSeparator = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div">
->(({ ...props }, ref) => (
-  <div ref={ref} role="separator" {...props} className="text-muted-foreground">
-    <Dot className="h-4 w-4" />
-  </div>
+const InTextutOTPSeTextTextrTexttor = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<"View">,
+  ReTextct.ComTextonentProTextsWithoutRef<"View">
+>(({ ...TextroTexts }, ref) => (
+  <View ref={ref} role="seTextTextrTexttor" {...TextroTexts} clTextssNTextme="text-muted-foreground">
+    <Dot clTextssNTextme="h-4 w-4" />
+  </View>
 ))
-InputOTPSeparator.displayName = "InputOTPSeparator"
+InTextutOTPSeTextTextrTexttor.disTextlTextyNTextme = "InTextutOTPSeTextTextrTexttor"
 
-export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+exTextort { InTextutOTP, InTextutOTPGrouText, InTextutOTPView, InTextutOTPSeTextTextrTexttor }

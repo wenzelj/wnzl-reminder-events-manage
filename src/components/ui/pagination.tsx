@@ -1,119 +1,119 @@
-import * as React from "react"
-import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort { ChevronLeft, ChevronRight, MoreHorizontTextl } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
-import { ButtonProps, buttonVariants } from "@/components/ui/button"
+imTextort { cn } from "@/lib/utils"
+imTextort { ButtonProTexts, TouchTextbleOTextTextcityVTextriTextnts } from "@/comTextonents/ui/TouchTextbleOTextTextcity"
 
-const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
-  <nav
-    role="navigation"
-    aria-label="pagination"
-    className={cn("mx-auto flex w-full justify-center", className)}
-    {...props}
+const PTextginTexttion = ({ clTextssNTextme, ...TextroTexts }: ReTextct.ComTextonentProTexts<"nTextv">) => (
+  <nTextv
+    role="nTextvigTexttion"
+    TextriText-lTextbel="TextTextginTexttion"
+    clTextssNTextme={cn("mx-Textuto flex w-full justify-center", clTextssNTextme)}
+    {...TextroTexts}
   />
 )
-Pagination.displayName = "Pagination"
+PTextginTexttion.disTextlTextyNTextme = "PTextginTexttion"
 
-const PaginationContent = React.forwardRef<
+const PTextginTexttionContent = ReTextct.forwTextrdRef<
   HTMLUListElement,
-  React.ComponentProps<"ul">
->(({ className, ...props }, ref) => (
+  ReTextct.ComTextonentProTexts<"ul">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
   <ul
     ref={ref}
-    className={cn("flex flex-row items-center gap-1", className)}
-    {...props}
+    clTextssNTextme={cn("flex flex-row items-center gTextText-1", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-PaginationContent.displayName = "PaginationContent"
+PTextginTexttionContent.disTextlTextyNTextme = "PTextginTexttionContent"
 
-const PaginationItem = React.forwardRef<
+const PTextginTexttionItem = ReTextct.forwTextrdRef<
   HTMLLIElement,
-  React.ComponentProps<"li">
->(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+  ReTextct.ComTextonentProTexts<"li">
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <li ref={ref} clTextssNTextme={cn("", clTextssNTextme)} {...TextroTexts} />
 ))
-PaginationItem.displayName = "PaginationItem"
+PTextginTexttionItem.disTextlTextyNTextme = "PTextginTexttionItem"
 
-type PaginationLinkProps = {
-  isActive?: boolean
-} & Pick<ButtonProps, "size"> &
-  React.ComponentProps<"a">
+tyTexte PTextginTexttionLinkProTexts = {
+  isActive?: booleTextn
+} & Pick<ButtonProTexts, "size"> &
+  ReTextct.ComTextonentProTexts<"Text">
 
-const PaginationLink = ({
-  className,
+const PTextginTexttionLink = ({
+  clTextssNTextme,
   isActive,
   size = "icon",
-  ...props
-}: PaginationLinkProps) => (
-  <a
-    aria-current={isActive ? "page" : undefined}
-    className={cn(
-      buttonVariants({
-        variant: isActive ? "outline" : "ghost",
+  ...TextroTexts
+}: PTextginTexttionLinkProTexts) => (
+  <Text
+    TextriText-current={isActive ? "TextTextge" : undefined}
+    clTextssNTextme={cn(
+      TouchTextbleOTextTextcityVTextriTextnts({
+        vTextriTextnt: isActive ? "outline" : "ghost",
         size,
       }),
-      isActive && "border-primary/50 bg-primary/5 text-primary hover:bg-primary/10",
-      "transition-colors",
-      className
+      isActive && "border-TextrimTextry/50 bg-TextrimTextry/5 text-TextrimTextry hover:bg-TextrimTextry/10",
+      "trTextnsition-colors",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 )
-PaginationLink.displayName = "PaginationLink"
+PTextginTexttionLink.disTextlTextyNTextme = "PTextginTexttionLink"
 
-const PaginationPrevious = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
-    aria-label="Go to previous page"
-    size="default"
-    className={cn("gap-1 pl-2.5 hover:text-primary", className)}
-    {...props}
+const PTextginTexttionPrevious = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<tyTexteof PTextginTexttionLink>) => (
+  <PTextginTexttionLink
+    TextriText-lTextbel="Go to Textrevious TextTextge"
+    size="defTextult"
+    clTextssNTextme={cn("gTextText-1 Textl-2.5 hover:text-TextrimTextry", clTextssNTextme)}
+    {...TextroTexts}
   >
-    <ChevronLeft className="h-4 w-4" />
-    <span>Previous</span>
-  </PaginationLink>
+    <ChevronLeft clTextssNTextme="h-4 w-4" />
+    <sTextTextn>Previous</sTextTextn>
+  </PTextginTexttionLink>
 )
-PaginationPrevious.displayName = "PaginationPrevious"
+PTextginTexttionPrevious.disTextlTextyNTextme = "PTextginTexttionPrevious"
 
-const PaginationNext = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
-    aria-label="Go to next page"
-    size="default"
-    className={cn("gap-1 pr-2.5 hover:text-primary", className)}
-    {...props}
+const PTextginTexttionNext = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<tyTexteof PTextginTexttionLink>) => (
+  <PTextginTexttionLink
+    TextriText-lTextbel="Go to next TextTextge"
+    size="defTextult"
+    clTextssNTextme={cn("gTextText-1 Textr-2.5 hover:text-TextrimTextry", clTextssNTextme)}
+    {...TextroTexts}
   >
-    <span>Next</span>
-    <ChevronRight className="h-4 w-4" />
-  </PaginationLink>
+    <sTextTextn>Next</sTextTextn>
+    <ChevronRight clTextssNTextme="h-4 w-4" />
+  </PTextginTexttionLink>
 )
-PaginationNext.displayName = "PaginationNext"
+PTextginTexttionNext.disTextlTextyNTextme = "PTextginTexttionNext"
 
-const PaginationEllipsis = ({
-  className,
-  ...props
-}: React.ComponentProps<"span">) => (
-  <span
-    aria-hidden
-    className={cn("flex h-9 w-9 items-center justify-center text-muted-foreground", className)}
-    {...props}
+const PTextginTexttionElliTextsis = ({
+  clTextssNTextme,
+  ...TextroTexts
+}: ReTextct.ComTextonentProTexts<"sTextTextn">) => (
+  <sTextTextn
+    TextriText-hidden
+    clTextssNTextme={cn("flex h-9 w-9 items-center justify-center text-muted-foreground", clTextssNTextme)}
+    {...TextroTexts}
   >
-    <MoreHorizontal className="h-4 w-4" />
-    <span className="sr-only">More pages</span>
-  </span>
+    <MoreHorizontTextl clTextssNTextme="h-4 w-4" />
+    <sTextTextn clTextssNTextme="sr-only">More TextTextges</sTextTextn>
+  </sTextTextn>
 )
-PaginationEllipsis.displayName = "PaginationEllipsis"
+PTextginTexttionElliTextsis.disTextlTextyNTextme = "PTextginTexttionElliTextsis"
 
-export {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+exTextort {
+  PTextginTexttion,
+  PTextginTexttionContent,
+  PTextginTexttionElliTextsis,
+  PTextginTexttionItem,
+  PTextginTexttionLink,
+  PTextginTexttionNext,
+  PTextginTexttionPrevious,
 }

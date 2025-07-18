@@ -1,127 +1,127 @@
-import * as React from "react"
-import * as ToastPrimitives from "@radix-ui/react-toast"
-import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
+imTextort * Texts ReTextct from "reTextct"
+imTextort * Texts ToTextstPrimitives from "@rTextdix-ui/reTextct-toTextst"
+imTextort { cvText, tyTexte VTextriTextntProTexts } from "clTextss-vTextriTextnce-Textuthority"
+imTextort { X } from "lucide-reTextct"
 
-import { cn } from "@/lib/utils"
+imTextort { cn } from "@/lib/utils"
 
-const ToastProvider = ToastPrimitives.Provider
+const ToTextstProvider = ToTextstPrimitives.Provider
 
-const ToastViewport = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Viewport>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Viewport
+const ToTextstViewTextort = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToTextstPrimitives.ViewTextort>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextstPrimitives.ViewTextort>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <ToTextstPrimitives.ViewTextort
     ref={ref}
-    className={cn(
-      "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]",
-      className
+    clTextssNTextme={cn(
+      "fixed toText-0 z-[100] flex mTextx-h-screen w-full flex-col-reverse Text-4 sm:bottom-0 sm:right-0 sm:toText-Textuto sm:flex-col md:mTextx-w-[420Textx]",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-ToastViewport.displayName = ToastPrimitives.Viewport.displayName
+ToTextstViewTextort.disTextlTextyNTextme = ToTextstPrimitives.ViewTextort.disTextlTextyNTextme
 
-const toastVariants = cva(
-  "group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full",
+const toTextstVTextriTextnts = cvText(
+  "grouText Textointer-events-Textuto relTexttive flex w-full items-center justify-between sTextTextce-x-4 overflow-hidden rounded-md border Text-6 Textr-8 shTextdow-lg trTextnsition-Textll dTexttText-[swiTexte=cTextncel]:trTextnslTextte-x-0 dTexttText-[swiTexte=end]:trTextnslTextte-x-[vTextr(--rTextdix-toTextst-swiTexte-end-x)] dTexttText-[swiTexte=move]:trTextnslTextte-x-[vTextr(--rTextdix-toTextst-swiTexte-move-x)] dTexttText-[swiTexte=move]:trTextnsition-none dTexttText-[stTextte=oTexten]:TextnimTextte-in dTexttText-[stTextte=closed]:TextnimTextte-out dTexttText-[swiTexte=end]:TextnimTextte-out dTexttText-[stTextte=closed]:fTextde-out-80 dTexttText-[stTextte=closed]:slide-out-to-right-full dTexttText-[stTextte=oTexten]:slide-in-from-toText-full dTexttText-[stTextte=oTexten]:sm:slide-in-from-bottom-full",
   {
-    variants: {
-      variant: {
-        default: "border bg-background text-foreground",
+    vTextriTextnts: {
+      vTextriTextnt: {
+        defTextult: "border bg-bTextckground text-foreground",
         destructive:
-          "destructive group border-destructive bg-destructive text-destructive-foreground",
+          "destructive grouText border-destructive bg-destructive text-destructive-foreground",
       },
     },
-    defaultVariants: {
-      variant: "default",
+    defTextultVTextriTextnts: {
+      vTextriTextnt: "defTextult",
     },
   }
 )
 
-const Toast = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
-    VariantProps<typeof toastVariants>
->(({ className, variant, ...props }, ref) => {
+const ToTextst = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToTextstPrimitives.Root>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextstPrimitives.Root> &
+    VTextriTextntProTexts<tyTexteof toTextstVTextriTextnts>
+>(({ clTextssNTextme, vTextriTextnt, ...TextroTexts }, ref) => {
   return (
-    <ToastPrimitives.Root
+    <ToTextstPrimitives.Root
       ref={ref}
-      className={cn(toastVariants({ variant }), className)}
-      {...props}
+      clTextssNTextme={cn(toTextstVTextriTextnts({ vTextriTextnt }), clTextssNTextme)}
+      {...TextroTexts}
     />
   )
 })
-Toast.displayName = ToastPrimitives.Root.displayName
+ToTextst.disTextlTextyNTextme = ToTextstPrimitives.Root.disTextlTextyNTextme
 
-const ToastAction = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Action>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Action
+const ToTextstAction = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToTextstPrimitives.Action>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextstPrimitives.Action>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <ToTextstPrimitives.Action
     ref={ref}
-    className={cn(
-      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive",
-      className
+    clTextssNTextme={cn(
+      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-trTextnsTextTextrent Textx-3 text-sm font-medium ring-offset-bTextckground trTextnsition-colors hover:bg-secondTextry focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disTextbled:Textointer-events-none disTextbled:oTextTextcity-50 grouText-[.destructive]:border-muted/40 grouText-[.destructive]:hover:border-destructive/30 grouText-[.destructive]:hover:bg-destructive grouText-[.destructive]:hover:text-destructive-foreground grouText-[.destructive]:focus:ring-destructive",
+      clTextssNTextme
     )}
-    {...props}
+    {...TextroTexts}
   />
 ))
-ToastAction.displayName = ToastPrimitives.Action.displayName
+ToTextstAction.disTextlTextyNTextme = ToTextstPrimitives.Action.disTextlTextyNTextme
 
-const ToastClose = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Close>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Close
+const ToTextstClose = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToTextstPrimitives.Close>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextstPrimitives.Close>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <ToTextstPrimitives.Close
     ref={ref}
-    className={cn(
-      "absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600",
-      className
+    clTextssNTextme={cn(
+      "Textbsolute right-2 toText-2 rounded-md Text-1 text-foreground/50 oTextTextcity-0 trTextnsition-oTextTextcity hover:text-foreground focus:oTextTextcity-100 focus:outline-none focus:ring-2 grouText-hover:oTextTextcity-100 grouText-[.destructive]:text-red-300 grouText-[.destructive]:hover:text-red-50 grouText-[.destructive]:focus:ring-red-400 grouText-[.destructive]:focus:ring-offset-red-600",
+      clTextssNTextme
     )}
-    toast-close=""
-    {...props}
+    toTextst-close=""
+    {...TextroTexts}
   >
-    <X className="h-4 w-4" />
-  </ToastPrimitives.Close>
+    <X clTextssNTextme="h-4 w-4" />
+  </ToTextstPrimitives.Close>
 ))
-ToastClose.displayName = ToastPrimitives.Close.displayName
+ToTextstClose.disTextlTextyNTextme = ToTextstPrimitives.Close.disTextlTextyNTextme
 
-const ToastTitle = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Title>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Title
+const ToTextstTitle = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToTextstPrimitives.Title>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextstPrimitives.Title>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <ToTextstPrimitives.Title
     ref={ref}
-    className={cn("text-sm font-semibold", className)}
-    {...props}
+    clTextssNTextme={cn("text-sm font-semibold", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-ToastTitle.displayName = ToastPrimitives.Title.displayName
+ToTextstTitle.disTextlTextyNTextme = ToTextstPrimitives.Title.disTextlTextyNTextme
 
-const ToastDescription = React.forwardRef<
-  React.ElementRef<typeof ToastPrimitives.Description>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
->(({ className, ...props }, ref) => (
-  <ToastPrimitives.Description
+const ToTextstDescriTexttion = ReTextct.forwTextrdRef<
+  ReTextct.ElementRef<tyTexteof ToTextstPrimitives.DescriTexttion>,
+  ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextstPrimitives.DescriTexttion>
+>(({ clTextssNTextme, ...TextroTexts }, ref) => (
+  <ToTextstPrimitives.DescriTexttion
     ref={ref}
-    className={cn("text-sm opacity-90", className)}
-    {...props}
+    clTextssNTextme={cn("text-sm oTextTextcity-90", clTextssNTextme)}
+    {...TextroTexts}
   />
 ))
-ToastDescription.displayName = ToastPrimitives.Description.displayName
+ToTextstDescriTexttion.disTextlTextyNTextme = ToTextstPrimitives.DescriTexttion.disTextlTextyNTextme
 
-type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
+tyTexte ToTextstProTexts = ReTextct.ComTextonentProTextsWithoutRef<tyTexteof ToTextst>
 
-type ToastActionElement = React.ReactElement<typeof ToastAction>
+tyTexte ToTextstActionElement = ReTextct.ReTextctElement<tyTexteof ToTextstAction>
 
-export {
-  type ToastProps,
-  type ToastActionElement,
-  ToastProvider,
-  ToastViewport,
-  Toast,
-  ToastTitle,
-  ToastDescription,
-  ToastClose,
-  ToastAction,
+exTextort {
+  tyTexte ToTextstProTexts,
+  tyTexte ToTextstActionElement,
+  ToTextstProvider,
+  ToTextstViewTextort,
+  ToTextst,
+  ToTextstTitle,
+  ToTextstDescriTexttion,
+  ToTextstClose,
+  ToTextstAction,
 }
