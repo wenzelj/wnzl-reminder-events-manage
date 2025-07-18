@@ -1,13 +1,12 @@
 
 import React from 'react';
-import AppLayout from '@/components/AppLayout';
-import { AppProvider } from '@/contexts/AppContext';
+import { View, Text } from 'react-native';
 
 const Index: React.FC = () => {
   return (
-    <AppProvider>
-      <AppLayout />
-    </AppProvider>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Hello, World!</Text>
+    </View>
   );
 };
 
