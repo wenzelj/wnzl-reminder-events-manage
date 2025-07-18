@@ -1,7 +1,7 @@
 {
   "name": "new-mobile-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -15,7 +15,6 @@
     "@react-native-community/slider": "4.5.6",
     "@types/react": "~19.0.10",
     "expo": "~53.0.17",
-    "expo-cli": "^6.3.12",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "^0.79.5",
